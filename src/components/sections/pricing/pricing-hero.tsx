@@ -39,7 +39,7 @@ const itemVariants = {
 
 export function PricingHero() {
   const containerRef = React.useRef<HTMLDivElement>(null);
-
+  
   // Scroll-based animations
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -55,7 +55,7 @@ export function PricingHero() {
       ref={containerRef}
       className="relative flex min-h-[90vh] items-center overflow-hidden pb-16 pt-20 md:pb-32"
     >
-      {/* Simple background without animations - matching solutions hero */}
+      {/* Simple static background without animations */}
       <div className="absolute inset-0 -z-[1]">
         {/* Static background pattern */}
         <div className="bg-grid-white/5 absolute inset-0 [mask-image:radial-gradient(white,transparent_85%)]" />
@@ -66,7 +66,7 @@ export function PricingHero() {
           style={{ opacity, scale, y }}
           className="relative flex flex-col items-center text-center"
         >
-          {/* Icon */}
+          {/* Icon - simplified without pulsing animation */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -78,19 +78,8 @@ export function PricingHero() {
             className="mb-8"
           >
             <div className="relative inline-block">
-              <motion.div
-                className="absolute -inset-4 rounded-full bg-primary/20 blur-xl"
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.3, 0.8, 0.3],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                }}
-              />
-              <div className="relative rounded-2xl bg-primary/10 p-4 backdrop-blur-sm">
+              {/* Remove the glow effect completely */}
+              <div className="relative rounded-2xl bg-primary/20 p-4">
                 <CreditCard className="h-8 w-8 text-primary" />
               </div>
             </div>
@@ -106,10 +95,10 @@ export function PricingHero() {
             {/* Badge */}
             <motion.div
               variants={itemVariants}
-              className="mb-6 inline-flex items-center rounded-full bg-primary/10 px-4 py-1 text-sm ring-1 ring-primary/20 backdrop-blur-sm"
+              className="mb-6 inline-flex items-center rounded-full bg-primary/20 px-4 py-1 text-sm border border-primary/30"
             >
               <Receipt className="mr-2 h-4 w-4 text-primary" />
-              <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+              <span className="text-primary font-medium">
                 Simple, Transparent Pricing
               </span>
             </motion.div>
@@ -120,7 +109,7 @@ export function PricingHero() {
               className={`text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl ${dmSans.className}`}
             >
               Choose the Perfect Plan for Your{' '}
-              <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+              <span className="text-primary">
                 Business Growth
               </span>
             </motion.h1>
@@ -147,17 +136,6 @@ export function PricingHero() {
                 <Link href="/free-trial">
                   Start Free Trial
                   <RocketIcon className="ml-2 h-4 w-4 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-foreground/20 to-transparent"
-                    animate={{
-                      x: ['-100%', '100%'],
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      repeatDelay: 3,
-                    }}
-                  />
                 </Link>
               </Button>
               <Button 
