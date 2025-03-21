@@ -1,0 +1,212 @@
+/* Base animation classes with mount awareness */
+.animate-in {
+  animation-duration: var(--animation-duration, 500ms);
+  animation-timing-function: var(--animation-timing, ease-out);
+  animation-fill-mode: both;
+  animation-delay: var(--animation-delay, 0ms);
+}
+
+/* Fade animations with dynamic timing */
+.fade-in {
+  animation-name: fadeIn;
+  --animation-duration: var(--duration-normal, 500ms);
+}
+
+.fade-up {
+  animation-name: fadeUp;
+  --animation-duration: var(--duration-normal, 500ms);
+}
+
+.fade-down {
+  animation-name: fadeDown;
+  --animation-duration: var(--duration-normal, 500ms);
+}
+
+/* Hover effects with transition guards */
+.hover-float {
+  transition: transform var(--duration-fast, 300ms) ease;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hover-float:hover {
+    transform: translateY(-8px);
+  }
+}
+
+.hover-glow {
+  transition:
+    box-shadow var(--duration-fast, 300ms) ease,
+    transform var(--duration-fast, 300ms) ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hover-glow:hover {
+    box-shadow: 0 0 20px theme('colors.primary.200/20');
+    transform: translateY(-2px);
+  }
+}
+
+/* Loading states with reduced motion awareness */
+.loading-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    theme('colors.muted.DEFAULT/10') 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .loading-shimmer {
+    animation: shimmer 1.5s infinite;
+  }
+}
+
+/* Page transitions with mount coordination */
+.page-enter {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity var(--duration-normal, 300ms),
+    transform var(--duration-normal, 300ms);
+}
+
+.page-exit {
+  opacity: 1;
+}
+
+.page-exit-active {
+  opacity: 0;
+  transition: opacity var(--duration-normal, 300ms);
+}
+
+/* Text reveal animation with mount timing */
+.reveal-text {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-text {
+    animation: revealText 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: var(--mount-delay, 100ms);
+  }
+}
+
+/* CSS custom properties for timing */
+:root {
+  /* Base durations */
+  --duration-instant: 100ms;
+  --duration-fast: 200ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+
+  /* Mount-aware delays */
+  --mount-delay: 100ms;
+  --mount-stagger: 50ms;
+
+  /* Animation settings */
+  --ease-bounce: cubic-bezier(0.37, 1.75, 0.3, 0.87);
+  --ease-spring: cubic-bezier(0.43, 1.11, 0.41, 0.89);
+  --ease-out: cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+/* Define animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes revealText {
+  0% {
+    opacity: 0;
+    transform: translateY(1em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Global reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-in,
+  .hover-float,
+  .hover-glow,
+  .loading-shimmer,
+  .reveal-text {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .page-enter,
+  .page-enter-active,
+  .page-exit,
+  .page-exit-active {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* Print styles - disable animations */
+@media print {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}

@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 201 80% 53%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 226 94% 22%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 159 100% 40%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: var(--primary);
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Main background is now deeper */
+    --background: 226 70% 12%;
+    --foreground: 210 40% 98%;
+
+    /* Cards pop out slightly from background */
+    --card: 226 70% 15%;
+    --card-foreground: 210 40% 98%;
+
+    /* Popover has more contrast */
+    --popover: 226 70% 17%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Keep primary vibrant */
+    --primary: 201 80% 53%;
+    --primary-foreground: 226 70% 12%;
+
+    /* Secondary slightly lighter for visibility */
+    --secondary: 226 70% 20%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* More visible muted colors */
+    --muted: 226 70% 18%;
+    --muted-foreground: 210 40% 80%;
+
+    /* Accent less intense but still visible */
+    --accent: 159 60% 45%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Borders more visible */
+    --border: 226 70% 25%;
+    --input: 226 70% 25%;
+
+    /* Ring matches primary */
+    --ring: 201 80% 53%;
+
+    /* Stronger destructive for better visibility */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-[hsl(var(--border))];
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+  }
+}
+
+@layer utilities {
+  .animate-in {
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+  }
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-muted-foreground/30 transition-colors hover:bg-muted-foreground/50;
+}

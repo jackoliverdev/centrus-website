@@ -1,0 +1,229 @@
+/* Custom scrollbar for chat frame */
+.chat-frame::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-frame::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-frame::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.2);
+  border-radius: 9999px;
+  transition: background-color var(--duration-fast, 200ms);
+}
+
+.chat-frame::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.3);
+}
+
+/* Message bubble animations with mount awareness */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes message-pop-in {
+    0% {
+      opacity: 0;
+      transform: scale(0.9) translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  .message-animate-in {
+    animation: message-pop-in var(--duration-normal, 300ms) var(--ease-spring);
+    animation-fill-mode: both;
+    animation-delay: var(--mount-delay, 100ms);
+  }
+}
+
+/* Source reference animations */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes source-slide-in {
+    0% {
+      opacity: 0;
+      transform: translateY(5px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .source-animate-in {
+    animation: source-slide-in var(--duration-normal, 300ms) var(--ease-out);
+    animation-fill-mode: both;
+    animation-delay: calc(var(--mount-delay, 100ms) + 200ms);
+  }
+}
+
+/* Thinking animation dots with reduced motion handling */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes thinking-dot {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+  }
+
+  .thinking-dot {
+    animation: thinking-dot 1s var(--ease-spring) infinite;
+  }
+
+  .thinking-dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .thinking-dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+}
+
+/* Gradient animations with mount coordination */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .gradient-animate {
+    animation: gradient-shift 8s linear infinite;
+    animation-delay: var(--mount-delay, 100ms);
+  }
+}
+
+/* Pulse glow effect with reduced motion check */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      filter: brightness(1);
+    }
+    50% {
+      filter: brightness(1.1);
+    }
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+}
+
+/* Dark mode specific styles with theme transition */
+[data-theme='dark'] .chat-frame {
+  --message-employee-bg: hsl(var(--primary) / 0.1);
+  --message-centrus-bg: hsl(var(--primary) / 0.2);
+  --chat-border: hsl(var(--primary) / 0.2);
+  --timestamp-color: hsl(var(--muted-foreground) / 0.8);
+}
+
+/* Light mode specific styles with theme transition */
+[data-theme='light'] .chat-frame {
+  --message-employee-bg: hsl(var(--muted) / 0.2);
+  --message-centrus-bg: hsl(var(--primary) / 0.1);
+  --chat-border: hsl(var(--border) / 0.2);
+  --timestamp-color: hsl(var(--muted-foreground));
+}
+
+/* Chat frame glass effect */
+.chat-frame-glass {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Source reference hover effect with motion preference */
+.source-reference {
+  transition: all var(--duration-fast, 200ms) ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .source-reference:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.1);
+  }
+}
+
+/* Typing cursor animation */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes blink-cursor {
+    0%,
+    100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .typing-cursor {
+    animation: blink-cursor 1s infinite;
+    animation-delay: var(--mount-delay, 100ms);
+  }
+}
+
+/* Chat background patterns */
+.chat-grid-pattern {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, hsl(var(--primary) / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--primary) / 0.05) 1px, transparent 1px);
+  mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+}
+
+/* Custom utility classes for chat components */
+.message-shadow {
+  box-shadow: 0 2px 8px -2px hsl(var(--primary) / 0.1);
+}
+
+.source-badge {
+  background: linear-gradient(45deg, hsl(var(--primary) / 0.1), hsl(var(--primary) / 0.2));
+}
+
+/* Explicit reduced motion handling */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .message-animate-in,
+  .source-animate-in,
+  .thinking-dot,
+  .gradient-animate,
+  .pulse-glow,
+  .typing-cursor {
+    animation: none !important;
+  }
+
+  .source-reference:hover {
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
+/* Print styles - disable all animations */
+@media print {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
