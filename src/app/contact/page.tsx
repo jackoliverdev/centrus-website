@@ -5,7 +5,7 @@ import { ContactForm } from '@/components/sections/contact/contact-form';
 import { ContactHero } from '@/components/sections/contact/contact-hero';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Centrus AI',
+  title: 'Contact',
   description: 'Get in touch with our team. We can help you transform your business with AI.',
 };
 

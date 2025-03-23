@@ -34,7 +34,7 @@ export function TrialRedirect() {
 
         <Button 
           size="lg" 
-          className="group relative h-12 overflow-hidden"
+          className="group relative h-12 overflow-hidden text-white"
           asChild
         >
           <Link href="https://app.centrus.ai/sign-up">

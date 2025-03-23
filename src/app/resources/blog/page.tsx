@@ -3,7 +3,7 @@ import { BlogIndex } from '@/components/sections/resources/blog-index';
 import { blogPosts, blogCategories } from '@/content/blog';
 
 export const metadata: Metadata = {
-  title: 'Blog | Centrus AI',
+  title: 'Blog',
   description:
     'Explore the latest insights, updates, and thought leadership in AI technology and business transformation.',
   openGraph: {

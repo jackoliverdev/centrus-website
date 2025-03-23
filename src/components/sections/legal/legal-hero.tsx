@@ -74,8 +74,7 @@ export function LegalHero() {
             className="mb-8 flex justify-center"
           >
             <div className="relative">
-              <div className="absolute -inset-4 animate-pulse rounded-full bg-primary/20 blur-xl" />
-              <div className="relative rounded-full border border-primary/20 bg-primary/10 p-4 backdrop-blur-sm">
+              <div className="relative rounded-full border border-primary/20 bg-primary/10 p-4">
                 <Scale className="h-8 w-8 text-primary" />
               </div>
             </div>

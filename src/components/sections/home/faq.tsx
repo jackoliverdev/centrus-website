@@ -39,7 +39,7 @@ const faqs = [
       'Yes, Centrus offers seamless integration with popular business tools including Google Drive, Microsoft Teams, WhatsApp and more. We also provide API access for custom integrations with your internal systems.',
   },
   {
-    question: 'How accurate is the AI in understanding our content?',
+    question: 'How accurate is the AI in retrieving data?',
     answer:
       "Our AI achieves high accuracy through a specialised training process on your company's specific content and context. On average, our customers report 95%+ accuracy in information retrieval and responses.",
   },
@@ -54,7 +54,7 @@ export function FaqSection() {
   const [openIndex, setOpenIndex] = React.useState<number | null>(null);
 
   return (
-    <section className={cn("relative overflow-hidden py-8 sm:py-16", dmSans.className)}>
+    <section className={cn("relative overflow-hidden pt-0 pb-8 sm:pt-0 sm:pb-16", dmSans.className)}>
       {/* Simplified Background Elements - matching other sections */}
       <div className="absolute inset-0 -z-[1]">
         {/* Static grid background - matching other sections */}

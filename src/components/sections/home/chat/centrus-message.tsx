@@ -5,7 +5,6 @@ import { motion, MotionValue } from 'framer-motion';
 import { Bot } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { springs } from '@/lib/utils/chat-animations';
-import { useTypewriter } from '@/lib/hooks/use-typewriter';
 import { MessageBubble } from './message-bubble';
 import { SourceReference } from './source-reference';
 import { ThinkingState } from './thinking-state';
@@ -43,31 +42,12 @@ export const CentrusMessage = React.forwardRef<HTMLDivElement, CentrusMessagePro
     },
     ref
   ) => {
-    // Setup typewriter effect with optimized settings
-    const { getTypedText } = useTypewriter(text, scrollProgress || new MotionValue(0), {
-      scrollDirection,
-      maxSpeed: 35,
-      minSpeed: 15,
-      smoothing: 0.15,
-    });
-
     // Track typing state
     const [typingState, setTypingState] = React.useState({
       typedText: '',
       isComplete: false,
       progress: 0,
     });
-
-    // // Update typing state based on scroll progress
-    // React.useEffect(() => {
-    //   if (!isThinking && scrollProgress) {
-    //     const unsubscribe = scrollProgress.on('change', latest => {
-    //       console.log('latest', latest);
-    //       setTypingState(getTypedText(latest));
-    //     });
-    //     return () => unsubscribe();
-    //   }
-    // }, [scrollProgress, isThinking, getTypedText]);
 
     const typingTimerRef = React.useRef<NodeJS.Timeout | null>(null);
 
@@ -90,28 +70,7 @@ export const CentrusMessage = React.forwardRef<HTMLDivElement, CentrusMessagePro
         const unsubscribe = scrollProgress.on('change', updateTypingState);
         return () => unsubscribe?.();
       }
-    }, [scrollProgress, isThinking, typingState.progress]);
-
-    // Ensure typing continues until the message is fully typed
-    // React.useEffect(() => {
-    //   if (typingState.isComplete) return; // Stop when fully typed
-
-    //   if (typingTimerRef.current) clearInterval(typingTimerRef.current); // Clear previous timer
-
-    //   typingTimerRef.current = setInterval(() => {
-    //     if (typingState.progress < 1) {
-    //       setTypingState(prev => ({
-    //         ...prev,
-    //         typedText: text.slice(0, Math.floor((prev.progress + 0.05) * text.length)),
-    //         progress: prev.progress + 0.05,
-    //       }));
-    //     } else {
-    //       clearInterval(typingTimerRef.current!); // Stop when text is complete
-    //     }
-    //   }, 100); // Adjust typing speed here (lower = faster)
-
-    //   return () => clearInterval(typingTimerRef.current!);
-    // }, [typingState, text]);
+    }, [scrollProgress, isThinking, typingState.progress, text]);
 
     // Avatar component
     const avatar = (
@@ -147,7 +106,7 @@ export const CentrusMessage = React.forwardRef<HTMLDivElement, CentrusMessagePro
       >
         <div className="relative space-y-4 ">
           {/* Message content */}
-          <span className="text-primary-foreground/90 text-xs font-medium sm:text-base">
+          <span className="text-primary-foreground/90 text-sm font-medium leading-relaxed sm:text-base">
             {typingState.typedText}
           </span>
 
@@ -164,7 +123,10 @@ export const CentrusMessage = React.forwardRef<HTMLDivElement, CentrusMessagePro
           {source && typingState.isComplete && (
             <motion.div
               style={{ opacity: sourceOpacity }}
-              className="mt-3 border-t border-primary/10 pt-3"
+              initial={{ scale: 0.95 }}
+              animate={{ scale: 1 }}
+              transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              className="mt-4 pt-2 border-t border-primary/25"
             >
               <SourceReference
                 filename={source.filename}

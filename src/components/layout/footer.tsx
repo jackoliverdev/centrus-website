@@ -109,7 +109,7 @@ export function Footer() {
                         className="h-10 flex-1 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:flex-initial md:min-w-[480px]"
                       />
                       <Button type="submit" className="whitespace-nowrap">
-                        <span className="block md:hidden">Join</span>
+                        <span className="block md:hidden text-white">Join</span>
                         <span className="hidden md:block text-white">Join Now</span>
                       </Button>
                     </div>

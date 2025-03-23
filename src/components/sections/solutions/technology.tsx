@@ -249,18 +249,6 @@ export function TechnologySection() {
             className="space-y-4 text-center"
           >
             <div className="relative inline-block">
-              <motion.div
-                className="absolute -inset-8 rounded-full bg-primary/10 blur-2xl"
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.3, 0.15, 0.3],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                }}
-              />
               <h2 className="relative text-2xl sm:text-4xl font-bold">Why choose Centrus AI?</h2>
             </div>
             <p className="mx-auto max-w-2xl text-xs sm:text-base text-muted-foreground">

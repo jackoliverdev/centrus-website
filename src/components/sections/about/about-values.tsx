@@ -88,7 +88,7 @@ const cardVariants = {
 
 export function AboutValues() {
   return (
-    <section className="relative overflow-hidden py-16">
+    <section className="relative overflow-hidden">
       <Container>
         {/* Section Header */}
         <motion.div

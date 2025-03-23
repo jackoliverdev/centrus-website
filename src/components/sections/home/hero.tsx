@@ -218,19 +218,7 @@ export function HeroSection() {
             className="mb-8 flex justify-center"
           >
             <div className="relative inline-block">
-              <motion.div
-                className="absolute -inset-4 rounded-full bg-primary/20 blur-xl"
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.3, 0.8, 0.3],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                }}
-              />
-              <div className="relative rounded-2xl bg-primary/10 p-4 backdrop-blur-sm">
+              <div className="relative rounded-2xl bg-primary/10 p-4">
                 <Bot className="h-8 w-8 text-primary" />
               </div>
             </div>

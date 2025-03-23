@@ -4,9 +4,8 @@ import { HeroSection } from '@/components/sections/home/hero';
 import { FeaturesSection } from '@/components/sections/home/features';
 import { InteractiveDemo } from '@/components/sections/home/interactive-demo';
 import { HowItWorksSection } from '@/components/sections/home/how-it-works';
-import { SolutionsGrid } from '@/components/sections/home/solutions-grid';
 import { IntegrationsSection } from '@/components/sections/home/integrations';
-import { TestimonialsSection } from '@/components/sections/home/testimonials';
+import { TestimonialsSection } from '@/components/sections/home/NotUsed-testimonials';
 import { FaqSection } from '@/components/sections/home/faq';
 import { CtaSection } from '@/components/sections/home/cta';
 
@@ -27,7 +26,6 @@ export default function HomePage() {
       <InteractiveDemo />
       <FeaturesSection />
       <IntegrationsSection />
-      {/* <SolutionsGrid /> */}
       {/* <TestimonialsSection /> */}
       <CtaSection />
       <FaqSection />

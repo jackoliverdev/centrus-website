@@ -6,6 +6,7 @@ import '@/styles/globals.css';
 
 import { Footer } from '@/components/layout/footer';
 import { Header } from '@/components/layout/header';
+import { ScrollToTop } from '@/components/layout/scroll-to-top';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 import { Providers } from '@/providers/providers';
@@ -52,7 +53,7 @@ export const metadata: Metadata = {
     template: '%s | Centrus AI',
   },
   description:
-    'Transform your company knowledge access with conversational AI. Instantly retrieve, analyze, and create work-related information.',
+    'Transform your company knowledge access with conversational AI. Instantly retrieve, analyse, and create work-related information.',
   keywords: [
     'AI business assistant',
     'company knowledge management',
@@ -65,7 +66,7 @@ export const metadata: Metadata = {
   creator: 'Centrus AI',
   openGraph: {
     type: 'website',
-    locale: 'en_US',
+    locale: 'en_GB',
     title: 'Centrus AI | Your AI-Powered Business Assistant',
     description: 'Transform your company knowledge access with conversational AI.',
     siteName: 'Centrus AI',
@@ -135,6 +136,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       )}>
         <Providers>
           <div className="relative flex min-h-screen flex-col">
+            <ScrollToTop />
             <Header />
             <main className="flex-1">
               {/* <Suspense fallback={<PageLoading />}></Suspense> */}

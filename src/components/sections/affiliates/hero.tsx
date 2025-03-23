@@ -22,7 +22,6 @@ export function AffiliatesHero() {
             className="mb-6 flex justify-center"
           >
             <div className="relative">
-              <div className="absolute -inset-4 animate-pulse rounded-full bg-primary/20 blur-xl" />
               <div className="relative rounded-full border border-primary/20 bg-primary/10 p-4 backdrop-blur-sm">
                 <HeartHandshake className="h-8 w-8 text-primary" />
               </div>
@@ -55,7 +54,7 @@ export function AffiliatesHero() {
             {[
               {
                 icon: <CircleDollarSign className="h-5 w-5" />,
-                title: '20% Commission',
+                title: '10% Commission',
                 description: 'Guaranteed recurring revenue',
               },
               {

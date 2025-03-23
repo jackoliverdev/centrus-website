@@ -14,7 +14,15 @@ const stats = [
   { value: '10', suffix: 'x', label: 'Potential Efficiency Gain' },
 ];
 
-function StatCounter({ value, suffix = '', delay = 0 }) {
+function StatCounter({ 
+  value, 
+  suffix = '', 
+  delay = 0 
+}: { 
+  value: string; 
+  suffix?: string; 
+  delay?: number 
+}) {
   const { formattedCount, setRef } = useCounter({
     end: parseInt(value),
     duration: 2000,
@@ -117,7 +125,6 @@ export function ContactHero() {
             transition={{ ...SPRING_CONFIG, delay: 0.1 }}
             className="relative"
           >
-            <div className="absolute -inset-x-4 -inset-y-2 rounded-lg bg-gradient-to-r from-primary via-accent to-primary opacity-10 blur-2xl" />
             <h1 className="relative font-heading text-4xl font-bold tracking-tight sm:text-6xl">
               Get in Touch
               <br />

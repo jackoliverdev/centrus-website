@@ -10,7 +10,6 @@ import { EmployeeMessage } from './chat/employee-message';
 import { CentrusMessage } from './chat/centrus-message';
 import { ThinkingState } from './chat/thinking-state';
 import { homeContent } from '@/content/home';
-import { Button } from '@/components/ui/button';
 import { springs } from '@/lib/utils/chat-animations';
 
 const { conversations } = homeContent.chatShowcase;
@@ -261,11 +260,11 @@ export function InteractiveDemo() {
           <div className="mx-auto w-full max-w-4xl relative">
             <ChatFrame 
               frameTitle={conversation.chatTitle} 
-              className="h-[400px] md:h-[500px] lg:h-[550px]"
+              className="h-[500px] sm:h-[500px] lg:h-[550px]"
             >
-              <div className="flex flex-col space-y-6 h-full p-3 md:p-6">
+              <div className="flex flex-col space-y-4 sm:space-y-6 h-full p-4 sm:p-6">
                 <AnimatePresence mode="wait">
-                  <div key={activeIndex} className="space-y-6 md:space-y-8">
+                  <div key={activeIndex} className="space-y-4 sm:space-y-6 md:space-y-8">
                     {/* Employee message */}
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
@@ -312,20 +311,6 @@ export function InteractiveDemo() {
                 </AnimatePresence>
               </div>
             </ChatFrame>
-            
-            {/* Demo controls */}
-            <div className="mt-6 flex justify-center">
-              <Button 
-                variant="outline" 
-                size="sm" 
-                onClick={handleRestart}
-                disabled={isRestarting}
-                className="bg-background/50 backdrop-blur-sm"
-              >
-                <RefreshCw className="mr-2 h-3.5 w-3.5" />
-                Restart Demo
-              </Button>
-            </div>
             
             {/* Progress indicators */}
             <div className="mt-4 flex justify-center gap-2">

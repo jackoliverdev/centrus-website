@@ -109,8 +109,7 @@ export function BlogHero() {
             className="mb-8 flex justify-center"
           >
             <div className="relative">
-              <div className="absolute -inset-4 animate-pulse rounded-full bg-primary/20 blur-xl" />
-              <div className="relative rounded-full border border-primary/20 bg-primary/10 p-4 backdrop-blur-sm">
+              <div className="relative rounded-full border border-primary/20 bg-primary/10 p-4">
                 <PenTool className="h-8 w-8 text-primary" />
               </div>
             </div>
@@ -148,8 +147,7 @@ export function BlogHero() {
                 animate="visible"
                 className="group relative"
               >
-                <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary/10 to-primary/5 blur-xl transition-opacity group-hover:opacity-75" />
-                <div className="relative rounded-lg border border-border/50 p-6 backdrop-blur-sm">
+                <div className="relative rounded-lg border border-border/50 p-6">
                   <feature.icon className="mx-auto mb-2 h-6 w-6 text-primary" />
                   <dt className="text-sm font-medium text-muted-foreground">{feature.label}</dt>
                   <dd className="mt-1 text-2xl font-semibold tracking-tight">{feature.value}</dd>

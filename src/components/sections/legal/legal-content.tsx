@@ -36,11 +36,11 @@ export function LegalContent({ title, subtitle, content }: LegalContentProps) {
         const element = document.getElementById(heading.id);
         if (!element) {
           const headingElements = document.getElementsByTagName(`h${heading.level}`);
-          for (const el of headingElements) {
+          Array.from(headingElements).forEach(el => {
             if (el.textContent === heading.text) {
               el.id = heading.id;
             }
-          }
+          });
         }
       });
     }, 100);

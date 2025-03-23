@@ -67,22 +67,29 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             <Link href="/resources/blog">
               <Button variant="ghost" size="sm" className="gap-1 bg-background/50 backdrop-blur-sm hover:bg-background/70">
                 <ArrowLeft className="h-4 w-4" />
-                Back to Blogs
+                <span className="sm:inline">Back to Blogs</span>
               </Button>
             </Link>
           </div>
 
           {/* Content wrapper */}
-          <div className="relative px-6 py-12 sm:px-16 sm:py-16">
-            {/* Category Tag */}
-            <div className="mb-6">
+          <div className="relative px-6 pt-16 pb-12 sm:px-16 sm:py-16">
+            {/* Category Tag - hidden on mobile and shown in the normal flow on sm and up */}
+            <div className="mb-6 hidden sm:block">
+              <span className="rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary ring-1 ring-primary/20 backdrop-blur-sm">
+                {post.category}
+              </span>
+            </div>
+            
+            {/* Mobile category tag - positioned to the right and only shown on mobile */}
+            <div className="absolute top-4 right-4 z-10 sm:hidden">
               <span className="rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary ring-1 ring-primary/20 backdrop-blur-sm">
                 {post.category}
               </span>
             </div>
 
             {/* Meta Info */}
-            <div className="mb-8 flex items-center gap-4 text-sm text-muted-foreground">
+            <div className="mb-8 flex items-center gap-6 text-sm text-muted-foreground">
               <div className="flex items-center gap-1">
                 <Calendar className="h-4 w-4" />
                 {post.date}

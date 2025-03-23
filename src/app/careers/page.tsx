@@ -4,7 +4,7 @@ import { CareersHero } from '@/components/sections/careers/careers-hero';
 import { JobOpenings } from '@/components/sections/careers/job-openings';
 
 export const metadata: Metadata = {
-  title: 'Careers | Centrus AI',
+  title: 'Careers',
   description: 'Join our team and help shape the future of enterprise AI.',
 };
 

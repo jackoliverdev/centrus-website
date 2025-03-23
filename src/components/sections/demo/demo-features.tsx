@@ -68,17 +68,6 @@ const features = [
   },
 ];
 
-function StatCounter({ value, suffix = '', delay = 0 }) {
-  const { formattedCount, setRef } = useCounter({
-    end: parseInt(value.replace('x', '')),
-    duration: 2000,
-    delay,
-    formatter: num => `${num}${suffix}`,
-  });
-
-  return <span ref={setRef}>{formattedCount}</span>;
-}
-
 export function DemoFeatures() {
   return (
     <Container>

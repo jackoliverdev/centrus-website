@@ -47,7 +47,7 @@ export function PricingFaq() {
   const [openIndex, setOpenIndex] = React.useState<number | null>(null);
 
   return (
-    <section className={cn("relative overflow-hidden py-8 sm:py-16", dmSans.className)}>
+    <section className={cn("relative overflow-hidden pt-0 pb-8 sm:pt-0 sm:pb-16", dmSans.className)}>
       {/* Simplified Background Elements - matching other sections */}
       <div className="absolute inset-0 -z-[1]">
         {/* Static grid background - matching other sections */}

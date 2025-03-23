@@ -43,8 +43,8 @@ export const SourceReference = React.forwardRef<HTMLDivElement, SourceReferenceP
       )}
       {...props}
     >
-      <div className="flex flex-col gap-1">
-        <span className="text-sm font-semibold text-primary/70">
+      <div className="flex flex-col">
+        <span className="text-xs sm:text-sm font-semibold text-foreground">
           Source:
         </span>
         <motion.div
@@ -53,22 +53,20 @@ export const SourceReference = React.forwardRef<HTMLDivElement, SourceReferenceP
           onClick={handleClick}
           className="relative cursor-pointer w-full"
         >
-          <SourceFileIcon
-            filename={filename}
-            className="hover:brightness-110 text-2xl"
-          />
-          {url && (
-            <motion.div
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ ...springs.bouncy, delay: delay + 0.2 }}
-              className="absolute -right-2 -top-2 h-4 w-4 rounded-full
-                         bg-primary/20 backdrop-blur-sm flex items-center justify-center
-                         border border-primary/30 text-primary"
-            >
-              <ExternalLink className="h-2.5 w-2.5" />
-            </motion.div>
-          )}
+          <div className="flex items-center gap-2 p-2 px-3 rounded hover:bg-primary/10 transition-colors bg-primary/5">
+            <SourceFileIcon
+              filename={filename}
+              className="hover:brightness-110 text-xl sm:text-2xl text-foreground"
+            />
+            {url && (
+              <motion.div 
+                className="hidden sm:flex ml-auto" 
+                whileTap={{ scale: 0.95 }}
+              >
+                <ExternalLink className="h-4 w-4 text-primary" />
+              </motion.div>
+            )}
+          </div>
         </motion.div>
       </div>
     </motion.div>

@@ -1,12 +1,14 @@
 import { Metadata } from 'next';
 
+import { IntegrationsHero } from '@/components/sections/integrations/integrations-hero';
+import { IntegrationsGrid } from '@/components/sections/integrations/integrations-grid';
 import { CustomIntegrations } from '@/components/sections/integrations/custom';
 import { IntegrationsFaq } from '@/components/sections/integrations/faq';
-import { IntegrationsGrid } from '@/components/sections/integrations/integrations-grid';
-import { IntegrationsHero } from '@/components/sections/integrations/integrations-hero';
+
+
 
 export const metadata: Metadata = {
-  title: 'Integrations | Centrus AI',
+  title: 'Integrations',
   description:
     'Connect Centrus AI with your favorite tools. Seamless integration with Google Drive, Microsoft Teams, Slack, and more.',
 };

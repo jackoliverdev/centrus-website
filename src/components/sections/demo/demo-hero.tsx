@@ -92,8 +92,7 @@ export function DemoHero() {
             className="mb-8"
           >
             <div className="relative inline-block">
-              <div className="absolute -inset-4 rounded-full bg-primary/20 blur-xl" />
-              <div className="relative rounded-2xl bg-primary/10 p-4 backdrop-blur-sm">
+              <div className="relative rounded-2xl bg-primary/20 p-4">
                 <PlayCircle className="h-8 w-8 text-primary" />
               </div>
             </div>

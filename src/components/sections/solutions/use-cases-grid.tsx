@@ -27,7 +27,7 @@ const useCases = [
     hoverGradient:
       'group-hover:from-[#3B00ff]/20 group-hover:via-[#3B00ff]/10 group-hover:to-transparent',
     stats: {
-      value: '85',
+      value: '80',
       suffix: '%',
       label: 'Faster Info Retrieval',
     },
@@ -208,18 +208,6 @@ export function UseCasesGrid() {
           className="mb-16 text-center"
         >
           <div className="relative inline-block">
-            <motion.div
-              className="absolute -inset-8 rounded-full bg-primary/10 blur-2xl"
-              animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0.3, 0.15, 0.3],
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-            />
             <h2 className="relative text-2xl sm:text-4xl font-bold">Transform Your Workflow</h2>
           </div>
           <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-muted-foreground">

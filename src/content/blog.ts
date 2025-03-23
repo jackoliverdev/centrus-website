@@ -59,107 +59,6 @@ const authors = {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: 'centrusai-vs-chatgpt',
-    title: `Centrus AI vs ChatGPT: what's the difference?`,
-    description:
-      'ChatGPT receives over 10 million queries each day, and impressively hit 100 million weekly users in November 2023. So, how does Centrus AI compare to ChatGPT?',
-    date: 'February 12, 2025',
-    category: 'AI & Machine Learning',
-    image: '/images/BlogChatGPTvsCentrus.png',
-    author: authors.jackMelluish,
-    readingTime: '4 min read',
-    tags: ['AI', 'Enterprise', 'Future Tech', 'Digital Transformation'],
-    relatedPosts: ['online-safety-5-reasons', 'ai-revolution-knowledge-management'],
-    content: `
-ChatGPT receives over 10 million queries each day, and impressively hit 100 million weekly users in November 2023. So, how does Centrus AI compare to ChatGPT?
-
-## 1. The information source
-
-Centrus AI sources all of its knowledge from your company's information. It integrates with your digital tools and platforms, and the company documents you upload to it. This means every interaction is based on your specific business context, ensuring relevance and accuracy. Moreover, Centrus prioritises data security, implementing robust encryption and access controls to keep your sensitive information protected at all times.
-
-ChatGPT is different because it sources its information from data it finds across the internet, making it a generalised tool that might not answer to the benefit of your specific needs. This means ChatGPT is difficult to completely trust and integrate for daily business use. This is why many organisations have banned the use of ChatGPT to prevent incorrect information being released in external communications.
-
-## 2. Integrations
-
-One of Centrus AI's most powerful differences is its ability to integrate with an ever-growing range of digital software. From Google Drive to Microsoft Teams, Centrus allows you to query data across multiple locations that hold your organisation's information without switching between applications. This seamless integration dramatically improves efficiency and provides a holistic view of your business information.
-
-ChatGPT can only be integrated with the back-end locations that its developers choose, giving no control to the user on where they want to pull data from.
-
-## 3. Transparency and Source Attribution
-
-Centrus AI prioritises transparency; every response includes references to the specific documents or data sources it used to provide your answer, allowing you to verify information with ease and confidence. Your Centrus admins have access to chat histories, allowing for full transparency and audit trails. Therefore, this feature not only builds trust but also helps in maintaining accountability and ensuring compliance within your organisation.
-
-ChatGPT, often provides information without clear sources, and you may have to ask it where it sourced the information from before visiting that website and double checking its validity for yourself. For many queries ChatGPT admits itself that there wasn't any one source it retrieved data from, explaining it uses general knowledge. This can be disadvantageous when used in a business setting where you need to back up the information's location to ensure its integrity.
-
-## 4. Customised AI Solutions
-
-Centrus AI goes beyond general-purpose artificial intelligence. We offer additional custom AI development to address your specific business needs. Whether it's for streamlining particular operations, automating complex processes, or developing unique AI-driven tools, Centrus can work with you to create tailored solutions that drive efficiency and innovation in your business. This includes developing tailored AI for your most time-consuming tasks.
-
-ChatGPT has regular updates but it will only ever be an all-purpose AI search engine that ultimately competes with Google Search. OpenAI focuses on making ChatGPT more human in its upgrades which is not so much our focus at Centrus AI. We want to curate your very own personalised AI assistant to help you where you need it most.
-
-## 5. Strict Data Privacy and Compliance
-
-Centrus AI has grown from bottom up with business privacy and compliance in mind. With your very own version of the software, designed specifically for your business day-to-day use, everything that goes into your Centrus account stays within your organisation, and is protected.
-
-OpenAI openly states that ChatGPT is not secure for businesses. If someone in your organisation mistakenly shares sensitive information in ChatGPT, it could lead to potential privacy concerns and data breaches. Therefore many businesses like Apple and Amazon have banned employees from using the software.
-
-## Choosing Centrus AI for Your Business
-
-While ChatGPT is an impressive tool for general use, Centrus AI is purpose-built for business. By offering secure, integrated, and customised AI solutions, Centrus empowers your team to work smarter, not harder. Our platform combines the power of AI with your unique business knowledge, resulting in more accurate, relevant, and actionable insights.
-
-With Centrus, you're not just adopting an AI tool; you're gaining a partner committed to enhancing your business operations through intelligent, secure, and integrated AI solutions.
-
-*Ready to experience the Centrus difference? Contact us today for a personalised demo and discover how Centrus AI can transform your business operations.*`,
-  },
-  {
-    slug: 'online-safety-5-reasons',
-    title: 'Online safety - the 5 reasons you can rely on Centrus',
-    description: `In 2023, over 4,000 cyberattacks were reported in Europe alone. No organisations big or small were safe and even those in the FTSE 100 faced these threats. So, it's now common knowledge that today's digital landscape requires an intelligent, thorough approach to digital security.`,
-    date: 'February 5, 2025',
-    category: 'Security',
-    image: '/images/blogOnlineSafety.png',
-    author: authors.centrusTeam,
-    readingTime: '3 min read',
-    tags: ['Security', 'Privacy', 'Enterprise', 'Data Protection', 'GDPR'],
-    relatedPosts: ['centrusai-vs-chatgpt', 'ai-revolution-knowledge-management'],
-    content: `
-In 2023, over 4,000 cyberattacks were reported in Europe alone. No organisations big or small were safe and even those in the FTSE 100 faced these threats. So, it's now common knowledge that today's digital landscape requires an intelligent, thorough approach to digital security.
-
-Organisations must consider internal threats, too. Protecting sensitive information and ensuring this data is only accessible on a 'need-to-know' basis is a valid concern for businesses across Europe.
-
-When managing and leveraging business data, trust in software providers' integrity is paramount. That's why we've built our AI platform with your privacy and security at the forefront. From protecting data to receiving accurate responses below are 5 reasons you can rely on Centrus AI.
-
-## 1. Complete data encryption
-
-Centrus AI implements complete data encryption both in transit (when data is moving between different points, like from your computer to our servers or between different parts of our system) and at rest (when data is stored and not actively moving, like when it's saved in our databases or storage systems), ensuring your information is protected at all times. We use AWS servers to store our data for the best security infrastructure, encryptions and certifications.
-
-As a European-based company, we adhere to all GDPR practices and are actively working towards obtaining industry-standard certifications. We are committed to continuously reviewing our security measures to ensure the highest safety for our users.
-
-## 2. Robust role-based access control
-
-Our unique role-based access control system ensures that your employees can only access information they're authorised to access. This granular control over data access reinforces the security and relevance of all data interactions within your organisation. With Centrus, you can trust that sensitive information remains accessible only to designated individuals, significantly reducing the risk of accidental information leaks.
-
-This works by having internally-selected administrators to have the authority to select who can access the information they've uploaded to Centrus. These role-based tags are flexible and can be changed when you need them to.
-
-## 3. Your data stays private and secure
-
-Access to your data is strictly controlled - only your authorised company administrators can manage your personalised version of Centrus. We maintain the highest data privacy standards, never storing, copying, or indexing your data beyond what's necessary for the platform to function. Your business intelligence remains fully confidential and protected at all times.
-
-## 4. Accurate AI responses
-
-Accurate data is essential for effective business decisions. Centrus has been engineered by AI experts to generate responses by intelligently analysing your company's verified data sources.
-
-Our AI models precisely match your queries with relevant information from your data, ensuring reliable and trustworthy insights. Every response includes a clear reference showing the exact source of the information, so you can be confident that Centrus is pulling data from authorised company sources.
-
-## 5. Your intelligent business information hub
-
-Centrus AI understands that every organisation has unique data requirements. We provide personalised responses to your queries by analysing your specific business data and context, delivering insights that are precisely relevant to your needs.
-
-Unlike generic search engines or AI tools, Centrus focuses exclusively on your business environment. Simply ask questions in plain language, and receive clear, targeted answers drawn from your company's data. This smart approach saves time, eliminates information overload, and ensures you get actionable insights that matter to your business.
-
-*Ready to see how Centrus can transform your data management? Get in touch today for a personalised demo and experience the power of secure, intelligent data access.*`
-  },
-  {
     slug: 'ai-revolution-knowledge-management',
     title: 'The AI revolution: knowledge management at work',
     description: 'While current trends like data security, sustainability, and talent shortages take centre stage, an ongoing challenge continues to set businesses back every year. Now AI has the potential to help.',
@@ -229,6 +128,107 @@ Centrus AI offers a comprehensive solution to the challenges of modern knowledge
 Experience the transformative power of AI-driven knowledge management with Centrus. Our platform integrates seamlessly with your existing tools, requiring minimal setup and delivering maximum impact. From small businesses to large enterprises, Centrus AI scales to meet your unique needs, helping you unlock the full potential of your organisation's collective knowledge.
 
 *Ready to revolutionise your knowledge management? Contact us today for a personalised demo and discover how Centrus AI can transform your business operations.*`
+  },
+  {
+    slug: 'online-safety-5-reasons',
+    title: 'Online safety - the 5 reasons you can rely on Centrus',
+    description: `In 2023, over 4,000 cyberattacks were reported in Europe alone. No organisations big or small were safe and even those in the FTSE 100 faced these threats. So, it's now common knowledge that today's digital landscape requires an intelligent, thorough approach to digital security.`,
+    date: 'February 5, 2025',
+    category: 'Security',
+    image: '/images/blogOnlineSafety.png',
+    author: authors.centrusTeam,
+    readingTime: '3 min read',
+    tags: ['Security', 'Privacy', 'Enterprise', 'Data Protection', 'GDPR'],
+    relatedPosts: ['centrusai-vs-chatgpt', 'ai-revolution-knowledge-management'],
+    content: `
+In 2023, over 4,000 cyberattacks were reported in Europe alone. No organisations big or small were safe and even those in the FTSE 100 faced these threats. So, it's now common knowledge that today's digital landscape requires an intelligent, thorough approach to digital security.
+
+Organisations must consider internal threats, too. Protecting sensitive information and ensuring this data is only accessible on a 'need-to-know' basis is a valid concern for businesses across Europe.
+
+When managing and leveraging business data, trust in software providers' integrity is paramount. That's why we've built our AI platform with your privacy and security at the forefront. From protecting data to receiving accurate responses below are 5 reasons you can rely on Centrus AI.
+
+## 1. Complete data encryption
+
+Centrus AI implements complete data encryption both in transit (when data is moving between different points, like from your computer to our servers or between different parts of our system) and at rest (when data is stored and not actively moving, like when it's saved in our databases or storage systems), ensuring your information is protected at all times. We use AWS servers to store our data for the best security infrastructure, encryptions and certifications.
+
+As a European-based company, we adhere to all GDPR practices and are actively working towards obtaining industry-standard certifications. We are committed to continuously reviewing our security measures to ensure the highest safety for our users.
+
+## 2. Robust role-based access control
+
+Our unique role-based access control system ensures that your employees can only access information they're authorised to access. This granular control over data access reinforces the security and relevance of all data interactions within your organisation. With Centrus, you can trust that sensitive information remains accessible only to designated individuals, significantly reducing the risk of accidental information leaks.
+
+This works by having internally-selected administrators to have the authority to select who can access the information they've uploaded to Centrus. These role-based tags are flexible and can be changed when you need them to.
+
+## 3. Your data stays private and secure
+
+Access to your data is strictly controlled - only your authorised company administrators can manage your personalised version of Centrus. We maintain the highest data privacy standards, never storing, copying, or indexing your data beyond what's necessary for the platform to function. Your business intelligence remains fully confidential and protected at all times.
+
+## 4. Accurate AI responses
+
+Accurate data is essential for effective business decisions. Centrus has been engineered by AI experts to generate responses by intelligently analysing your company's verified data sources.
+
+Our AI models precisely match your queries with relevant information from your data, ensuring reliable and trustworthy insights. Every response includes a clear reference showing the exact source of the information, so you can be confident that Centrus is pulling data from authorised company sources.
+
+## 5. Your intelligent business information hub
+
+Centrus AI understands that every organisation has unique data requirements. We provide personalised responses to your queries by analysing your specific business data and context, delivering insights that are precisely relevant to your needs.
+
+Unlike generic search engines or AI tools, Centrus focuses exclusively on your business environment. Simply ask questions in plain language, and receive clear, targeted answers drawn from your company's data. This smart approach saves time, eliminates information overload, and ensures you get actionable insights that matter to your business.
+
+*Ready to see how Centrus can transform your data management? Get in touch today for a personalised demo and experience the power of secure, intelligent data access.*`
+  },
+  {
+    slug: 'centrusai-vs-chatgpt',
+    title: `Centrus AI vs ChatGPT: what's the difference?`,
+    description:
+      'ChatGPT receives over 10 million queries each day, and impressively hit 100 million weekly users in November 2023. So, how does Centrus AI compare to ChatGPT?',
+    date: 'February 12, 2025',
+    category: 'AI & Machine Learning',
+    image: '/images/BlogChatGPTvsCentrus.png',
+    author: authors.jackMelluish,
+    readingTime: '4 min read',
+    tags: ['AI', 'Enterprise', 'Future Tech', 'Digital Transformation'],
+    relatedPosts: ['online-safety-5-reasons', 'ai-revolution-knowledge-management'],
+    content: `
+ChatGPT receives over 10 million queries each day, and impressively hit 100 million weekly users in November 2023. So, how does Centrus AI compare to ChatGPT?
+
+## 1. The information source
+
+Centrus AI sources all of its knowledge from your company's information. It integrates with your digital tools and platforms, and the company documents you upload to it. This means every interaction is based on your specific business context, ensuring relevance and accuracy. Moreover, Centrus prioritises data security, implementing robust encryption and access controls to keep your sensitive information protected at all times.
+
+ChatGPT is different because it sources its information from data it finds across the internet, making it a generalised tool that might not answer to the benefit of your specific needs. This means ChatGPT is difficult to completely trust and integrate for daily business use. This is why many organisations have banned the use of ChatGPT to prevent incorrect information being released in external communications.
+
+## 2. Integrations
+
+One of Centrus AI's most powerful differences is its ability to integrate with an ever-growing range of digital software. From Google Drive to Microsoft Teams, Centrus allows you to query data across multiple locations that hold your organisation's information without switching between applications. This seamless integration dramatically improves efficiency and provides a holistic view of your business information.
+
+ChatGPT can only be integrated with the back-end locations that its developers choose, giving no control to the user on where they want to pull data from.
+
+## 3. Transparency and Source Attribution
+
+Centrus AI prioritises transparency; every response includes references to the specific documents or data sources it used to provide your answer, allowing you to verify information with ease and confidence. Your Centrus admins have access to chat histories, allowing for full transparency and audit trails. Therefore, this feature not only builds trust but also helps in maintaining accountability and ensuring compliance within your organisation.
+
+ChatGPT, often provides information without clear sources, and you may have to ask it where it sourced the information from before visiting that website and double checking its validity for yourself. For many queries ChatGPT admits itself that there wasn't any one source it retrieved data from, explaining it uses general knowledge. This can be disadvantageous when used in a business setting where you need to back up the information's location to ensure its integrity.
+
+## 4. Customised AI Solutions
+
+Centrus AI goes beyond general-purpose artificial intelligence. We offer additional custom AI development to address your specific business needs. Whether it's for streamlining particular operations, automating complex processes, or developing unique AI-driven tools, Centrus can work with you to create tailored solutions that drive efficiency and innovation in your business. This includes developing tailored AI for your most time-consuming tasks.
+
+ChatGPT has regular updates but it will only ever be an all-purpose AI search engine that ultimately competes with Google Search. OpenAI focuses on making ChatGPT more human in its upgrades which is not so much our focus at Centrus AI. We want to curate your very own personalised AI assistant to help you where you need it most.
+
+## 5. Strict Data Privacy and Compliance
+
+Centrus AI has grown from bottom up with business privacy and compliance in mind. With your very own version of the software, designed specifically for your business day-to-day use, everything that goes into your Centrus account stays within your organisation, and is protected.
+
+OpenAI openly states that ChatGPT is not secure for businesses. If someone in your organisation mistakenly shares sensitive information in ChatGPT, it could lead to potential privacy concerns and data breaches. Therefore many businesses like Apple and Amazon have banned employees from using the software.
+
+## Choosing Centrus AI for Your Business
+
+While ChatGPT is an impressive tool for general use, Centrus AI is purpose-built for business. By offering secure, integrated, and customised AI solutions, Centrus empowers your team to work smarter, not harder. Our platform combines the power of AI with your unique business knowledge, resulting in more accurate, relevant, and actionable insights.
+
+With Centrus, you're not just adopting an AI tool; you're gaining a partner committed to enhancing your business operations through intelligent, secure, and integrated AI solutions.
+
+*Ready to experience the Centrus difference? Contact us today for a personalised demo and discover how Centrus AI can transform your business operations.*`,
   },
   {
     slug: 'how-to-prompt',

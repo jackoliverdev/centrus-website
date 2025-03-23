@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { motion, MotionValue, useMotionTemplate, useTransform } from 'framer-motion';
+import { motion, MotionValue, useMotionTemplate, useTransform, useMotionValue } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { variants, springs } from '@/lib/utils/chat-animations';
 
@@ -53,7 +53,7 @@ export const MessageBubble = React.forwardRef<HTMLDivElement, MessageBubbleProps
     // Generate dynamic styles based on position
     const bubbleStyles = cn(
       // Base styles
-      'relative   w-[85%] rounded-2xl p-4 ',
+      'relative w-[95%] sm:w-[90%] md:w-[85%] rounded-2xl p-4 ',
       'shadow-sm backdrop-blur-sm',
       // Position-specific styles
       position === 'left'
@@ -74,7 +74,7 @@ export const MessageBubble = React.forwardRef<HTMLDivElement, MessageBubbleProps
 
     // Subtle gradient animation for the background
     const gradientX = useMotionTemplate`${useTransform(
-      scrollProgress || new MotionValue(0),
+      scrollProgress || useMotionValue(0),
       [0, 0.5, 1],
       ['0%', '100%', '0%']
     )}`;

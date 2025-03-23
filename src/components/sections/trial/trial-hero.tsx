@@ -55,7 +55,7 @@ export function TrialHero() {
   return (
     <section
       ref={containerRef}
-      className="relative flex items-center overflow-visible bg-background pb-16 pt-20"
+      className="relative flex items-center overflow-visible bg-background pb-4 pt-32"
     >
       <SimpleBackground />
 
@@ -90,37 +90,9 @@ export function TrialHero() {
             className="relative mb-8"
           >
             <div className="relative inline-block">
-              {/* Main rocket glow */}
+              {/* Rocket container - kept but simplified */}
               <motion.div
-                className="absolute -inset-8 rounded-full bg-primary/30 blur-2xl"
-                animate={{
-                  scale: [1, 1.5, 1],
-                  opacity: [0.3, 0.7, 0.3],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                }}
-              />
-
-              {/* Engine glow effect */}
-              <motion.div
-                className="absolute -bottom-6 left-1/2 h-12 w-8 -translate-x-1/2 bg-primary/40 blur-xl"
-                animate={{
-                  height: ['3rem', '4rem', '3rem'],
-                  opacity: [0.4, 0.8, 0.4],
-                }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                }}
-              />
-
-              {/* Rocket container */}
-              <motion.div
-                className="relative rounded-2xl bg-primary/10 p-4 backdrop-blur-sm"
+                className="relative rounded-2xl bg-primary/20 p-4"
                 animate={{
                   y: [0, -8, 0],
                   scale: [1, 1.05, 1],
@@ -135,20 +107,6 @@ export function TrialHero() {
                   <Rocket className="h-10 w-10 text-primary" />
                 </motion.div>
               </motion.div>
-
-              {/* Simplified trail effect (limited to just a few elements) */}
-              <motion.div
-                className="absolute -bottom-8 left-1/2 h-8 w-6 -translate-x-1/2 rounded-full bg-gradient-to-t from-primary/50 to-transparent blur-md"
-                animate={{
-                  height: ['2rem', '2.5rem', '2rem'],
-                  opacity: [0.3, 0.6, 0.3],
-                }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                }}
-              />
             </div>
           </motion.div>
 

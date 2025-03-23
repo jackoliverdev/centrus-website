@@ -6,7 +6,7 @@ import { TrialRedirect } from '@/components/sections/trial/trial-redirect';
 import { TrialHero } from '@/components/sections/trial/trial-hero';
 
 export const metadata: Metadata = {
-  title: 'Free Trial | Centrus AI',
+  title: 'Free Trial',
   description:
     'Start your free trial of Centrus AI. No credit card required. Experience the power of AI-driven knowledge management.',
 };

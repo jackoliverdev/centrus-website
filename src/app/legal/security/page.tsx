@@ -4,7 +4,7 @@ import { LegalContent } from '@/components/sections/legal/legal-content';
 import { securityContent } from '@/content/legal';
 
 export const metadata: Metadata = {
-  title: 'Security Policy | Centrus AI',
+  title: 'Security',
   description: 'Learn about how we protect your data with enterprise-grade security measures.',
 };
 
@@ -13,7 +13,7 @@ export default function SecurityPage() {
     <div>
       <LegalContent
         title="Security Policy"
-        subtitle="Last updated: December 23, 2024"
+        subtitle="Last updated: March 22, 2025"
         content={securityContent}
       />
     </div>

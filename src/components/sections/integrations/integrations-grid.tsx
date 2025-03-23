@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, Puzzle } from 'lucide-react';
+import { ArrowRight, Sparkles, Puzzle, LucideIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -10,7 +10,20 @@ import { Button } from '@/components/ui/button';
 import { Container } from '@/components/ui/container';
 import { cn } from '@/lib/utils/helpers';
 
-const integrations = [
+// Define a proper interface for the integration objects
+interface Integration {
+  name: string;
+  description: string;
+  integrationType: string;
+  color: string;
+  glowColor: string;
+  status: 'Active' | 'Coming Soon' | 'Contact';
+  href?: string;
+  logo?: string;
+  icon?: LucideIcon;
+}
+
+const integrations: Integration[] = [
   {
     name: 'Google Drive',
     description:
@@ -74,10 +87,10 @@ const integrations = [
     status: 'Contact',
     href: '/contact',
   },
-] as const;
+];
 
 interface IntegrationCardProps {
-  integration: (typeof integrations)[number];
+  integration: Integration;
   index: number;
 }
 
@@ -115,7 +128,118 @@ const cardVariants = {
 
 function IntegrationCard({ integration, index }: IntegrationCardProps) {
   const [isHovered, setIsHovered] = React.useState(false);
-  const Card = integration.href ? Link : 'div';
+
+  const cardContent = (
+    <div
+      className={cn(
+        'relative block rounded-xl p-6',
+        'bg-gradient-to-br from-background/50 to-background/90',
+        'border border-primary/5',
+        'transition-all duration-500',
+        'hover:border-primary/20',
+        integration.glowColor,
+        integration.href && 'cursor-pointer'
+      )}
+    >
+      <div className="mb-4 flex items-center justify-between">
+        <motion.div
+          initial={false}
+          animate={{
+            scale: isHovered ? 1.05 : 1,
+            y: isHovered ? -2 : 0,
+          }}
+          className="relative flex h-12 w-12 items-center justify-center rounded-lg border border-primary/10 bg-background/50 p-2 backdrop-blur-sm"
+        >
+          {integration.logo ? (
+            <Image
+              src={integration.logo}
+              alt={integration.name}
+              fill
+              className="object-contain p-2"
+            />
+          ) : integration.icon ? (
+            <integration.icon className="h-6 w-6 text-[#2b9ce5]" />
+          ) : null}
+        </motion.div>
+
+        {integration.status === 'Coming Soon' ? (
+          <span className="inline-flex items-center rounded-full bg-red-500/10 px-3 py-1 text-xs font-medium text-red-500 ring-1 ring-inset ring-red-500/20">
+            Coming Soon
+          </span>
+        ) : integration.status === 'Contact' ? (
+          <span className="inline-flex items-center rounded-full bg-[#2b9ce5]/10 px-3 py-1 text-xs font-medium text-[#2b9ce5] ring-1 ring-inset ring-[#2b9ce5]/20">
+            Contact Sales
+          </span>
+        ) : (
+          <div className="flex items-center gap-2">
+            <div className="h-2 w-2 animate-pulse rounded-full bg-[#10b981]" />
+            <span className="text-xs font-medium text-[#10b981]">Active</span>
+          </div>
+        )}
+      </div>
+
+      <div className="space-y-3">
+        <motion.h3
+          initial={false}
+          animate={{ y: isHovered ? -1 : 0 }}
+          className="bg-gradient-to-br from-foreground to-foreground/90 bg-clip-text text-lg font-semibold text-transparent"
+        >
+          {integration.name}
+        </motion.h3>
+
+        <div className="flex items-center gap-2">
+          <span className="text-sm text-muted-foreground">Integration Type:</span>
+          <span className="text-sm font-medium text-foreground">
+            {integration.integrationType}
+          </span>
+        </div>
+
+        <motion.p
+          initial={false}
+          animate={{ opacity: isHovered ? 0.9 : 0.7 }}
+          className="mb-8 min-h-[100px] text-sm leading-relaxed text-muted-foreground"
+        >
+          {integration.description}
+        </motion.p>
+      </div>
+
+      {(integration.status === 'Active' || integration.status === 'Contact') && (
+        <motion.div
+          initial={false}
+          animate={{
+            y: isHovered ? 0 : 4,
+            opacity: isHovered ? 1 : 0,
+          }}
+          className="absolute bottom-5 right-6"
+        >
+          <Button
+            variant="ghost"
+            size="sm"
+            className={cn(
+              'group/btn flex h-8 items-center gap-2',
+              integration.status === 'Contact'
+                ? 'text-[#2b9ce5] hover:text-[#2b9ce5]/90'
+                : 'text-[#10b981] hover:text-[#10b981]/90'
+            )}
+          >
+            <span className="text-sm font-medium">
+              {integration.status === 'Contact' ? 'Contact Sales' : 'Learn more'}
+            </span>
+            <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-0.5" />
+          </Button>
+        </motion.div>
+      )}
+
+      <div
+        className={cn(
+          'absolute inset-0 rounded-xl opacity-0 transition-opacity duration-500',
+          'bg-gradient-to-br',
+          integration.color,
+          'group-hover:opacity-[0.03]'
+        )}
+      />
+    </div>
+  );
 
   return (
     <motion.div
@@ -124,116 +248,11 @@ function IntegrationCard({ integration, index }: IntegrationCardProps) {
       onMouseLeave={() => setIsHovered(false)}
       className="group relative will-change-transform"
     >
-      <Card
-        href={integration.href || '#'}
-        className={cn(
-          'relative block rounded-xl p-6',
-          'bg-gradient-to-br from-background/50 to-background/90',
-          'border border-primary/5',
-          'transition-all duration-500',
-          'hover:border-primary/20',
-          integration.glowColor,
-          integration.href && 'cursor-pointer'
-        )}
-      >
-        <div className="mb-4 flex items-center justify-between">
-          <motion.div
-            initial={false}
-            animate={{
-              scale: isHovered ? 1.05 : 1,
-              y: isHovered ? -2 : 0,
-            }}
-            className="relative flex h-12 w-12 items-center justify-center rounded-lg border border-primary/10 bg-background/50 p-2 backdrop-blur-sm"
-          >
-            {integration.logo ? (
-              <Image
-                src={integration.logo}
-                alt={integration.name}
-                fill
-                className="object-contain p-2"
-              />
-            ) : (
-              integration.icon && <integration.icon className="h-6 w-6 text-[#2b9ce5]" />
-            )}
-          </motion.div>
-
-          {integration.status === 'Coming Soon' ? (
-            <span className="inline-flex items-center rounded-full bg-red-500/10 px-3 py-1 text-xs font-medium text-red-500 ring-1 ring-inset ring-red-500/20">
-              Coming Soon
-            </span>
-          ) : integration.status === 'Contact' ? (
-            <span className="inline-flex items-center rounded-full bg-[#2b9ce5]/10 px-3 py-1 text-xs font-medium text-[#2b9ce5] ring-1 ring-inset ring-[#2b9ce5]/20">
-              Contact Sales
-            </span>
-          ) : (
-            <div className="flex items-center gap-2">
-              <div className="h-2 w-2 animate-pulse rounded-full bg-[#10b981]" />
-              <span className="text-xs font-medium text-[#10b981]">Active</span>
-            </div>
-          )}
-        </div>
-
-        <div className="space-y-3">
-          <motion.h3
-            initial={false}
-            animate={{ y: isHovered ? -1 : 0 }}
-            className="bg-gradient-to-br from-foreground to-foreground/90 bg-clip-text text-lg font-semibold text-transparent"
-          >
-            {integration.name}
-          </motion.h3>
-
-          <div className="flex items-center gap-2">
-            <span className="text-sm text-muted-foreground">Integration Type:</span>
-            <span className="text-sm font-medium text-foreground">
-              {integration.integrationType}
-            </span>
-          </div>
-
-          <motion.p
-            initial={false}
-            animate={{ opacity: isHovered ? 0.9 : 0.7 }}
-            className="mb-8 min-h-[100px] text-sm leading-relaxed text-muted-foreground"
-          >
-            {integration.description}
-          </motion.p>
-        </div>
-
-        {(integration.status === 'Active' || integration.status === 'Contact') && (
-          <motion.div
-            initial={false}
-            animate={{
-              y: isHovered ? 0 : 4,
-              opacity: isHovered ? 1 : 0,
-            }}
-            className="absolute bottom-5 right-6"
-          >
-            <Button
-              variant="ghost"
-              size="sm"
-              className={cn(
-                'group/btn flex h-8 items-center gap-2',
-                integration.status === 'Contact'
-                  ? 'text-[#2b9ce5] hover:text-[#2b9ce5]/90'
-                  : 'text-[#10b981] hover:text-[#10b981]/90'
-              )}
-            >
-              <span className="text-sm font-medium">
-                {integration.status === 'Contact' ? 'Contact Sales' : 'Learn more'}
-              </span>
-              <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-0.5" />
-            </Button>
-          </motion.div>
-        )}
-
-        <div
-          className={cn(
-            'absolute inset-0 rounded-xl opacity-0 transition-opacity duration-500',
-            'bg-gradient-to-br',
-            integration.color,
-            'group-hover:opacity-[0.03]'
-          )}
-        />
-      </Card>
+      {integration.href ? (
+        <Link href={integration.href}>{cardContent}</Link>
+      ) : (
+        cardContent
+      )}
     </motion.div>
   );
 }

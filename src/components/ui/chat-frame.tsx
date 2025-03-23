@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, HTMLMotionProps, Variant, Variants } from 'framer-motion';
 import { SendHorizontal } from 'lucide-react';
 import * as React from 'react';
 
@@ -20,6 +20,14 @@ interface ChatFrameProps extends React.HTMLAttributes<HTMLDivElement> {
   frameTitle?: string;
   shouldAnimate?: boolean;
 }
+
+// Create a MotionDiv component to handle the type issues
+type MotionDivProps = HTMLMotionProps<'div'> &
+  React.HTMLAttributes<HTMLDivElement> & {
+    ref?: React.Ref<HTMLDivElement>;
+  };
+
+const MotionDiv: React.FC<MotionDivProps> = props => <motion.div {...props} />;
 
 const ScrollIndicator = React.memo(() => (
   <motion.div
@@ -112,9 +120,9 @@ export const ChatFrame = React.forwardRef<HTMLDivElement, ChatFrameProps>(
           ref={ref}
           className={cn(
             'relative mx-auto w-full max-w-4xl',
-            'h-[calc(100vh-12rem)] md:h-[calc(100vh-24rem)]',
-            'min-h-[350px] md:min-h-[400px]',
-            'max-h-[500px] md:max-h-[600px]',
+            'h-[650px] sm:h-[calc(100vh-12rem)] md:h-[calc(100vh-24rem)]',
+            'min-h-[650px] md:min-h-[400px]',
+            'max-h-[650px] md:max-h-[600px]',
             'bg-background/30 backdrop-blur-xl',
             'border border-primary/10',
             'shadow-lg shadow-primary/5',
@@ -148,32 +156,36 @@ export const ChatFrame = React.forwardRef<HTMLDivElement, ChatFrameProps>(
           {showInput && (
             <div className="absolute bottom-0 left-0 right-0 z-30 border-t border-primary/10 bg-background">
               <div className="p-3">
-                <div
+                <motion.div
                   className={cn(
-                    'flex items-center gap-2 rounded-lg border border-primary/10 bg-primary/5 p-2',
+                    'flex items-center gap-2 rounded-lg border border-primary/10 bg-primary/5 p-2 ',
                     hasFocus && 'border-primary/20'
                   )}
+                  whileHover={{ scale: 1.01 }}
+                  transition={springs.gentle}
                 >
                   <input
                     ref={inputRef}
                     type="text"
                     value={inputValue}
-                    // onChange={e => setInputValue(e.target.value)}
-                    // onChange={e => e.preventDefault()}
+                    onChange={e => setInputValue(e.target.value)}
                     onKeyDown={handleKeyDown}
                     onFocus={() => setHasFocus(true)}
                     onBlur={() => setHasFocus(false)}
                     placeholder={inputPlaceholder}
-                    className="flex-1 bg-transparent px-2 text-foreground/90 placeholder:text-muted-foreground/50 focus:outline-none"
-                    readOnly={true}
+                    disabled
+                    className="w-48 flex-1 bg-transparent px-2 text-foreground/90 placeholder:text-muted-foreground/50 focus:outline-none cursor-text"
                   />
-                  <button
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                     onClick={handleSend}
-                    className="rounded-md bg-primary/20 p-1.5 text-primary transition-colors hover:bg-primary/30"
+                    disabled
+                    className="rounded-md bg-primary/20 p-1.5 text-primary transition-colors hover:bg-primary/30 cursor-pointer"
                   >
-                    <SendHorizontal className="h-4 w-4" />
-                  </button>
-                </div>
+                    <SendHorizontal className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                  </motion.button>
+                </motion.div>
               </div>
             </div>
           )}
@@ -183,15 +195,15 @@ export const ChatFrame = React.forwardRef<HTMLDivElement, ChatFrameProps>(
 
     return (
       <motion.div
-        ref={ref}
+        ref={ref as any}
         variants={variants.chatFrame}
         initial="initial"
         animate="animate"
         className={cn(
           'relative mx-auto w-full max-w-4xl',
-          'h-[calc(100vh-12rem)] md:h-[calc(100vh-24rem)]',
-          'min-h-[550px] md:min-h-[400px]',
-          'max-h-[800px] md:max-h-[600px]',
+          'h-[650px] sm:h-[calc(100vh-12rem)] md:h-[calc(100vh-24rem)]',
+          'min-h-[650px] md:min-h-[400px]',
+          'max-h-[650px] md:max-h-[600px]',
           'bg-background/30 backdrop-blur-xl',
           'border border-primary/10',
           'shadow-lg shadow-primary/5',
@@ -199,14 +211,20 @@ export const ChatFrame = React.forwardRef<HTMLDivElement, ChatFrameProps>(
           'overflow-hidden',
           className
         )}
-        {...props}
+        {...props as any}
       >
         <FrameTitle title={frameTitle} />
 
         <motion.div
           className="absolute inset-0 overflow-hidden rounded-lg md:rounded-2xl"
-          variants={gradients.subtle}
-          animate="animate"
+          animate={{
+            backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"],
+            transition: {
+              duration: 8,
+              repeat: Infinity,
+              ease: "linear"
+            }
+          }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-primary/5" />
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f46e503_1px,transparent_1px)] bg-[size:4rem_4rem]" />
@@ -237,34 +255,38 @@ export const ChatFrame = React.forwardRef<HTMLDivElement, ChatFrameProps>(
             animate={{ opacity: 1, y: 0 }}
             className="absolute bottom-0 left-0 right-0 z-30 border-t border-primary/10 bg-background"
           >
-            <motion.div
-              className={cn(
-                'flex items-center gap-2 rounded-lg border border-primary/10 bg-primary/5 p-2 ',
-                hasFocus && 'border-primary/20'
-              )}
-              whileHover={{ scale: 1.01 }}
-              transition={springs.gentle}
-            >
-              <input
-                ref={inputRef}
-                type="text"
-                value={''}
-                onChange={e => setInputValue('')}
-                onKeyDown={handleKeyDown}
-                onFocus={() => setHasFocus(true)}
-                onBlur={() => setHasFocus(false)}
-                placeholder={inputPlaceholder}
-                className="w-48 flex-1 bg-transparent px-2 text-foreground/90 placeholder:text-muted-foreground/50 focus:outline-none"
-              />
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={handleSend}
-                className=" rounded-md bg-primary/20 p-1.5 text-primary transition-colors hover:bg-primary/30"
+            <div className="p-3">
+              <motion.div
+                className={cn(
+                  'flex items-center gap-2 rounded-lg border border-primary/10 bg-primary/5 p-2 ',
+                  hasFocus && 'border-primary/20'
+                )}
+                whileHover={{ scale: 1.01 }}
+                transition={springs.gentle}
               >
-                <SendHorizontal className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-              </motion.button>
-            </motion.div>
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={inputValue}
+                  onChange={e => setInputValue(e.target.value)}
+                  onKeyDown={handleKeyDown}
+                  onFocus={() => setHasFocus(true)}
+                  onBlur={() => setHasFocus(false)}
+                  placeholder={inputPlaceholder}
+                  disabled
+                  className="w-48 flex-1 bg-transparent px-2 text-foreground/90 placeholder:text-muted-foreground/50 focus:outline-none cursor-text"
+                />
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={handleSend}
+                  disabled
+                  className="rounded-md bg-primary/20 p-1.5 text-primary transition-colors hover:bg-primary/30 cursor-pointer"
+                >
+                  <SendHorizontal className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                </motion.button>
+              </motion.div>
+            </div>
           </motion.div>
         )}
       </motion.div>

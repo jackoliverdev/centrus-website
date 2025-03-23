@@ -4,7 +4,7 @@ import { LegalContent } from '@/components/sections/legal/legal-content';
 import { privacyContent } from '@/content/legal';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Centrus AI',
+  title: 'Privacy',
   description:
     'Learn how Centrus AI protects and handles your data with enterprise-grade security and compliance.',
 };
@@ -14,7 +14,7 @@ export default function PrivacyPage() {
     <div>
       <LegalContent
         title="Privacy Policy"
-        subtitle="Last updated: December 25, 2024"
+        subtitle="Last updated: March 22, 2025"
         content={privacyContent}
       />
     </div>

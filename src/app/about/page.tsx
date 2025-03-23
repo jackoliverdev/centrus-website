@@ -5,7 +5,7 @@ import { AboutMission } from '@/components/sections/about/about-mission';
 import { AboutValues } from '@/components/sections/about/about-values';
 
 export const metadata: Metadata = {
-  title: 'About Us | Centrus AI',
+  title: 'About Us',
   description: 'Learn about our mission to transform businesses with AI-powered intelligence.',
 };
 

@@ -5,7 +5,6 @@ import { motion, MotionValue } from 'framer-motion';
 import { MessageSquare } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { springs } from '@/lib/utils/chat-animations';
-import { useTypewriter } from '@/lib/hooks/use-typewriter';
 import { MessageBubble } from './message-bubble';
 
 interface EmployeeMessageProps {
@@ -23,13 +22,13 @@ const MessageTags = ({ tags, isVisible }: { tags: string[]; isVisible: boolean }
     initial={{ opacity: 0, y: -10 }}
     animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -10 }}
     transition={{ ...springs.gentle, delay: 0.2 }}
-    className="flex gap-2"
+    className="flex gap-2 flex-wrap"
   >
     {tags.map(tag => (
       <span
         key={tag}
-        className="rounded-full border border-primary/10 bg-primary/5 px-2 
-                   py-1 text-xs text-primary/50 backdrop-blur-sm"
+        className="rounded-full border border-primary/10 bg-primary/5 px-2.5 
+                   py-1 text-xs sm:text-xs text-primary/70 backdrop-blur-sm"
       >
         {tag}
       </span>
@@ -51,14 +50,6 @@ export const EmployeeMessage = React.forwardRef<HTMLDivElement, EmployeeMessageP
     },
     ref
   ) => {
-    // Setup typewriter effect
-    const { getTypedText } = useTypewriter(text, scrollProgress || new MotionValue(0), {
-      scrollDirection,
-      maxSpeed: 50,
-      minSpeed: 10,
-      smoothing: 0.1,
-    });
-
     // Get current typing state
     const [typingState, setTypingState] = React.useState({
       typedText: '',
@@ -90,61 +81,6 @@ export const EmployeeMessage = React.forwardRef<HTMLDivElement, EmployeeMessageP
       }
     }, [scrollProgress, text, typingState.progress]);
 
-    // Ensure typing continues until the message is fully typed
-    // React.useEffect(() => {
-    //   if (typingState.isComplete) return; // Stop when fully typed
-
-    //   if (typingTimerRef.current) clearInterval(typingTimerRef.current); // Clear previous timer
-
-    //   typingTimerRef.current = setInterval(() => {
-    //     if (typingState.progress < 1) {
-    //       setTypingState(prev => ({
-    //         ...prev,
-    //         typedText: text.slice(0, Math.floor((prev.progress + 0.05) * text.length)),
-    //         progress: prev.progress + 0.05,
-    //       }));
-    //     } else {
-    //       clearInterval(typingTimerRef.current!); // Stop when text is complete
-    //     }
-    //   }, 100); // Adjust typing speed here (lower = faster)
-
-    //   return () => clearInterval(typingTimerRef.current!);
-    // }, [typingState, text]);
-
-    // React.useEffect(() => {
-    //   if (scrollProgress) {
-    //     const unsubscribe = scrollProgress.on('change', latest => {
-    //       setTypingState(getTypedText(latest));
-    //     });
-    //     return () => unsubscribe();
-    //   }
-    // }, [scrollProgress, getTypedText]);
-
-    // const typingTimerRef = React.useRef<NodeJS.Timeout | null>(null);
-    // // Update typing state based on scroll progress
-    // React.useEffect(() => {
-    //   if (scrollProgress) {
-    //     const unsubscribe = scrollProgress.on('change', (latest: number) => {
-    //       if (typingTimerRef.current) clearInterval(typingTimerRef.current);
-
-    //       typingTimerRef.current = setInterval(() => {
-    //         if (latest > 0.1 && !typingState.isComplete) {
-    //           const { typedText, progress, isComplete } = getTypedText(latest);
-
-    //           setTypingState(prev => ({
-    //             ...prev,
-    //             typedText,
-    //             progress,
-    //             isComplete,
-    //           }));
-    //         }
-    //       }, 1); // Adjust typing speed here (lower = faster)
-    //     });
-
-    //     return () => unsubscribe();
-    //   }
-    // }, [scrollProgress, typingState.isComplete, getTypedText]);
-
     // Avatar component
     const avatar = (
       <motion.div
@@ -167,7 +103,7 @@ export const EmployeeMessage = React.forwardRef<HTMLDivElement, EmployeeMessageP
         messageIndex={messageIndex}
         isTyping={!typingState.isComplete}
         header={
-          tags.length > 0 && <MessageTags tags={tags} isVisible={typingState.isComplete > 0} />
+          tags.length > 0 && <MessageTags tags={tags} isVisible={typingState.isComplete} />
         }
         className={cn(
           'group transition-all duration-300',
@@ -179,7 +115,7 @@ export const EmployeeMessage = React.forwardRef<HTMLDivElement, EmployeeMessageP
       >
         {/* Message content with typewriter effect */}
         <div className="relative">
-          <span className="text-xs font-medium text-foreground/90 sm:text-base">
+          <span className="text-sm font-medium leading-relaxed text-foreground/90 sm:text-base">
             {typingState.typedText}
           </span>
 
@@ -188,7 +124,7 @@ export const EmployeeMessage = React.forwardRef<HTMLDivElement, EmployeeMessageP
             <motion.span
               animate={{ opacity: [0, 1, 0] }}
               transition={{ duration: 1, repeat: Infinity }}
-              className="ml-0.5  inline-block h-4 w-0.5 bg-primary/50 align-middle"
+              className="ml-0.5 inline-block h-4 w-0.5 bg-primary/50 align-middle"
             />
           )}
         </div>

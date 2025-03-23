@@ -10,7 +10,7 @@ import { Container } from '@/components/ui/container';
 
 export function CustomIntegrations() {
   return (
-    <section className="relative overflow-hidden py-10 sm:py-16">
+    <section className="relative overflow-hidden pt-0 pb-10 sm:pt-0 sm:pb-16">
       {/* Simplified Background Elements - matching other sections */}
       <div className="absolute inset-0 -z-[1]">
         {/* Static grid background - matching other sections */}

@@ -134,7 +134,7 @@ export function MobileNav() {
 
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="resources" className="border-none">
-                  <AccordionTrigger className="py-2 text-sm hover:no-underline">
+                  <AccordionTrigger className="py-2 text-sm hover:no-underline focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0">
                     Resources
                   </AccordionTrigger>
                   <AccordionContent>
@@ -177,7 +177,7 @@ export function MobileNav() {
                 <Button variant="outline" asChild className="w-full">
                   <Link href="/demo">Book Demo</Link>
                 </Button>
-                <Button asChild className="w-full">
+                <Button asChild className="w-full text-white">
                   <Link href="/free-trial">Free Trial</Link>
                 </Button>
               </div>
@@ -200,7 +200,7 @@ export function MobileNav() {
                     onChange={e => setEmail(e.target.value)}
                     className="h-9"
                   />
-                  <Button type="submit" className="h-9 w-full">
+                  <Button type="submit" className="h-9 w-full text-white">
                     Get AI Updates
                   </Button>
                 </form>
