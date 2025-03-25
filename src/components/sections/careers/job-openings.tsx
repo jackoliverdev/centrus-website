@@ -177,9 +177,9 @@ export function JobOpenings() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-              <Button asChild className="group">
+              <Button asChild className="group text-white">
                 <Link href="/contact">
-                  <Mail className="mr-2 h-4 w-4" />
+                  <Mail className="mr-2 h-4 w-4 text-white" />
                   Contact Us
                 </Link>
               </Button>

@@ -77,7 +77,7 @@ export function FaqSection() {
           <h2 className={cn("mt-3 sm:mt-4 text-xl font-bold sm:text-4xl", dmSans.className)}>
             Frequently Asked Questions
           </h2>
-          <p className={cn("mt-2 sm:mt-4 text-sm sm:text-lg text-muted-foreground", dmSans.className)}>
+          <p className={cn("mt-2 sm:mt-4 text-sm sm:text-lg text-muted-foreground mx-auto max-w-2xl", dmSans.className)}>
             Get answers to common questions about Centrus AI and how it can help your business.
           </p>
         </MotionDiv>
@@ -115,7 +115,7 @@ export function FaqSection() {
                     className={cn("flex w-full items-center justify-between gap-4 p-3 sm:p-4", dmSans.className)}
                   >
                     <span className={cn(
-                      'text-sm sm:text-base font-medium transition-colors',
+                      'text-sm sm:text-base font-medium transition-colors text-left',
                       openIndex === index ? 'text-primary' : 'text-foreground',
                       dmSans.className
                     )}>
@@ -134,7 +134,7 @@ export function FaqSection() {
                     dmSans.className
                   )}>
                     <div className={cn("overflow-hidden px-3 sm:px-4", dmSans.className)}>
-                      <div className={cn("text-sm sm:text-base text-muted-foreground", dmSans.className)}>
+                      <div className={cn("text-sm sm:text-base text-muted-foreground text-left", dmSans.className)}>
                         {faq.answer}
                       </div>
                     </div>

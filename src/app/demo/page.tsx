@@ -8,7 +8,33 @@ import { DemoProcess } from '@/components/sections/demo/demo-process';
 export const metadata: Metadata = {
   title: 'Book a Demo',
   description:
-    'See Centrus AI in action. Book a personalized demo to discover how we can transform your business operations.',
+    'See Centrus AI in action. Book a personalised demo to discover how we can transform your business operations.',
+  keywords: 'AI demo, product demonstration, book a demo, enterprise AI demo, live tour, personalised walkthrough, software presentation, solution preview',
+  openGraph: {
+    title: 'Book a Demo | Centrus AI',
+    description: 'See Centrus AI in action with a personalised demonstration tailored to your organisation\'s specific needs and challenges.',
+    type: 'website',
+    url: 'https://centrus.ai/demo',
+    siteName: 'Centrus AI',
+    images: [
+      {
+        url: '/logo.png',
+        width: 901,
+        height: 901,
+        alt: 'Centrus AI Demo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Book a Personalised AI Demo | Centrus AI',
+    description: 'Schedule a guided demonstration of how Centrus AI can transform your organisation\'s knowledge management and workflow efficiency.',
+    images: ['/logo.png'],
+    creator: '@centrusai',
+  },
+  alternates: {
+    canonical: 'https://centrus.ai/demo',
+  },
 };
 
 export default function DemoPage() {

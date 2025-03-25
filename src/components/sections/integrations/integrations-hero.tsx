@@ -101,8 +101,8 @@ export function IntegrationsHero() {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const [windowWidth, setWindowWidth] = React.useState(0);
 
-  // Initialize animation system with logo positions
-  const { packets, activeSourceIndex } = useNetworkAnimation(
+  // Simplify animation system - remove packet animations
+  const { activeSourceIndex } = useNetworkAnimation(
     logos.map(logo => ({
       x: parseFloat(logo.position.desktop.x) / 100,
       y: parseFloat(logo.position.desktop.y) / 100,
@@ -251,7 +251,7 @@ export function IntegrationsHero() {
               </Button>
             </motion.div>
 
-            {/* Network Visualization */}
+            {/* Network Visualization - Simplified */}
             <motion.div
               variants={itemVariants}
               className="relative mx-auto mt-6 aspect-[2/1] w-full max-w-3xl px-4 sm:px-6 lg:px-8"
@@ -259,19 +259,6 @@ export function IntegrationsHero() {
               <div className="absolute inset-0 flex flex-col items-center justify-center">
                 <svg className="h-full w-full">
                   <defs>
-                    <linearGradient id="connection-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="rgb(43, 156, 229)" stopOpacity="0.4" />
-                      <stop offset="100%" stopColor="rgb(43, 156, 229)" stopOpacity="0.1" />
-                    </linearGradient>
-
-                    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
-                      <feMerge>
-                        <feMergeNode in="blur" />
-                        <feMergeNode in="SourceGraphic" />
-                      </feMerge>
-                    </filter>
-
                     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
                       <path
                         d="M 40 0 L 0 0 0 40"
@@ -285,47 +272,10 @@ export function IntegrationsHero() {
                   {/* Background grid */}
                   <rect width="100%" height="100%" fill="url(#grid)" />
 
-                  {/* Connection paths */}
-                  {logos.map((logo, i) => {
-                    const startX = parseFloat(logo.position.desktop.x);
-                    const startY = parseFloat(logo.position.desktop.y);
-                    const centerX = 50;
-                    const centerY = 50;
-                    const controlX = centerX + (startX - centerX) * 0.5;
-
-                    return (
-                      <motion.path
-                        key={i}
-                        d={`M ${startX} ${startY} Q ${controlX} ${startY}, ${centerX} ${centerY}`}
-                        fill="none"
-                        stroke="url(#connection-gradient)"
-                        strokeWidth="1"
-                        initial={{ pathLength: 0 }}
-                        animate={{
-                          pathLength: activeSourceIndex === i ? [0, 1, 0] : 1,
-                          opacity: activeSourceIndex === i ? [0.8, 0.8, 0.8] : 0.2,
-                        }}
-                        transition={{
-                          duration: activeSourceIndex === i ? 2 : 0,
-                          ease: 'easeInOut',
-                        }}
-                      />
-                    );
-                  })}
-
-                  {/* Animated data packets */}
-                  {packets.map(packet => (
-                    <DataPacket
-                      key={packet.id}
-                      x={packet.x}
-                      y={packet.y}
-                      progress={packet.progress}
-                      phase={packet.phase}
-                    />
-                  ))}
+                  {/* Remove complex connection paths and data packets */}
                 </svg>
 
-                {/* Integration logos with responsive positioning */}
+                {/* Integration logos with responsive positioning - simplified */}
                 {logos.map((logo, index) => {
                   const position = getResponsivePosition(logo);
                   return (
@@ -352,20 +302,7 @@ export function IntegrationsHero() {
                                 shadow-lg shadow-primary/5 backdrop-blur-sm transition-colors hover:border-primary/40 sm:h-16
                                 sm:w-16 sm:p-3 md:h-20 md:w-20 md:p-4"
                       >
-                        {/* Active node glow */}
-                        <motion.div
-                          className="absolute inset-0 rounded-xl bg-primary/5"
-                          animate={{
-                            opacity: activeSourceIndex === index ? [0.2, 0.4, 0.2] : 0.2,
-                            scale: activeSourceIndex === index ? [1, 1.1, 1] : 1,
-                          }}
-                          transition={{
-                            duration: 2,
-                            repeat: Infinity,
-                            ease: 'easeInOut',
-                          }}
-                        />
-
+                        {/* Remove active node glow */}
                         <Image
                           src={logo.src}
                           alt="Integration logo"
@@ -377,7 +314,7 @@ export function IntegrationsHero() {
                   );
                 })}
 
-                {/* Center Bot with increased size */}
+                {/* Center Bot with simplified animation */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -397,24 +334,7 @@ export function IntegrationsHero() {
                     }}
                   >
                     <Bot className="h-8 w-8 text-primary sm:h-10 sm:w-10 md:h-12 md:w-12" />
-
-                    {/* Processing rings */}
-                    {[0, 1].map((i) => (
-                      <motion.div
-                        key={i}
-                        className="absolute inset-0 rounded-full"
-                        animate={{
-                          scale: [1, 1.5],
-                          opacity: [0.5, 0],
-                        }}
-                        transition={{
-                          duration: 2,
-                          repeat: Infinity,
-                          delay: i * 1,
-                          ease: 'easeOut',
-                        }}
-                      />
-                    ))}
+                    {/* Remove processing rings */}
                   </motion.div>
                 </motion.div>
               </div>

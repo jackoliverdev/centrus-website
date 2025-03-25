@@ -31,14 +31,14 @@ export const siteConfig = {
   },
   company: {
     name: 'Centrus AI Ltd',
-    address: '123 AI Street, Tech City, TC1 2AB',
+    address: '10-12 Mulberry Green, Old Harlow, Essex, CM17 0ET',
     registration: '12345678',
   },
   meta: {
     titleTemplate: '%s | Centrus AI',
     defaultTitle: 'Centrus AI - Your AI-Powered Business Assistant',
     defaultDescription:
-      'Transform your company knowledge access with conversational AI. Instantly retrieve, analyze, and create work-related information.',
+      'Transform your company knowledge access with conversational AI. Instantly retrieve, analyse, and create work-related information.',
     themeColor: [
       { media: '(prefers-color-scheme: light)', color: 'white' },
       { media: '(prefers-color-scheme: dark)', color: '#041B70' },

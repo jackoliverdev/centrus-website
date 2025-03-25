@@ -241,8 +241,7 @@ export function HeroSection() {
             </h1>
 
             <p className={`mt-6 text-lg text-muted-foreground ${dmSans.className}`}>
-              Transform your company knowledge access with conversational AI. Instantly retrieve,
-              analyse, and create work-related information.
+              Streamline your workday with AI that understands your business. Instantly access, organise, and create work content through simple conversations.
             </p>
 
             <div className="mt-10 flex justify-center gap-4">
@@ -286,8 +285,7 @@ export function HeroSection() {
             </h1>
 
             <motion.p className={`mt-6 text-xl text-muted-foreground ${dmSans.className}`}>
-              Transform your company knowledge access with conversational AI. Instantly retrieve,
-              analyse, and create work-related information.
+              Streamline your workday with AI that understands your business. Instantly access, organise, and create work content through simple conversations.
             </motion.p>
 
             <motion.div className="mt-10 flex flex-col gap-4 sm:flex-row">

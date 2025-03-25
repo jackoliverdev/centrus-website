@@ -63,16 +63,7 @@ const DesktopActions = React.memo(function DesktopActions() {
       <ThemeToggle />
       <Button
         variant="ghost"
-        className="text-sm hover:!bg-[#2b9ce5]/10 hover:!text-[#2b9ce5] dark:hover:!bg-[#2b9ce5]/10 dark:hover:!text-[#2b9ce5] dark:focus:!bg-[#2b9ce5]/10 dark:data-[state=open]:!bg-[#2b9ce5]/10"
-        asChild
-      >
-        <a href="https://app.centrus.ai/app" target="_blank" rel="noopener noreferrer">
-          Dashboard
-        </a>
-      </Button>
-      <Button
-        variant="ghost"
-        className="text-sm hover:!bg-[#2b9ce5]/10 hover:!text-[#2b9ce5] dark:hover:!bg-[#2b9ce5]/10 dark:hover:!text-[#2b9ce5] dark:focus:!bg-[#2b9ce5]/10 dark:data-[state=open]:!bg-[#2b9ce5]/10"
+        className="text-sm text-muted-foreground hover:text-[#2b9ce5]"
         asChild
       >
         <Link href="/demo">Book Demo</Link>
@@ -82,6 +73,15 @@ const DesktopActions = React.memo(function DesktopActions() {
         asChild
       >
         <Link href="/free-trial">Start Free</Link>
+      </Button>
+      <Button
+        className="border-[#2b9ce5] bg-transparent text-sm text-[#2b9ce5] transition-all duration-200 hover:scale-[1.02] hover:bg-[#2b9ce5]/10 active:scale-[0.98] dark:text-[#2b9ce5]"
+        variant="outline"
+        asChild
+      >
+        <a href="https://app.centrus.ai/app" target="_blank" rel="noopener noreferrer">
+          Dashboard
+        </a>
       </Button>
     </motion.div>
   );

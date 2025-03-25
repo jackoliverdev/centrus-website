@@ -206,12 +206,12 @@ function AnimatedButtonContent({ status }: { status: any }) {
   if (!status.submitting && !status.succeeded) {
     return (
       <motion.span
-        className="inline-flex items-center"
+        className="inline-flex items-center text-white"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
         Send Message
-        <Send className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+        <Send className="ml-2 h-4 w-4 text-white transition-transform group-hover:translate-x-1" />
       </motion.span>
     );
   }
@@ -221,7 +221,7 @@ function AnimatedButtonContent({ status }: { status: any }) {
       <motion.span
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="inline-flex items-center"
+        className="inline-flex items-center text-white"
       >
         <LoadingSpinner />
         Sending...

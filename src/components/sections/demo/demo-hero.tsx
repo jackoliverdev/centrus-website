@@ -125,7 +125,7 @@ export function DemoHero() {
               <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                 Centrus AI
               </span>{' '}
-              in Action
+              <span className="inline md:hidden"><br /></span>in Action
             </motion.h1>
 
             {/* Description */}

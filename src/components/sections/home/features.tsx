@@ -8,7 +8,7 @@ import {
   // useMotionTemplate,
   HTMLMotionProps,
 } from 'framer-motion';
-import { DollarSign, Users, Brain, Zap, Sparkles, ArrowRight } from 'lucide-react';
+import { DollarSign, Users, Brain, Zap, Sparkles, ArrowRight, ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 import * as React from 'react';
 import { DM_Sans } from 'next/font/google';
@@ -18,6 +18,7 @@ import { useCounter, counterEasings } from '@/lib/hooks/use-counter';
 // import { fadeIn, scale } from '@/lib/utils/animation';
 import { cn } from '@/lib/utils/helpers';
 import { useMountContext } from '@/providers/mount-provider';
+import { Button } from '@/components/ui/button';
 
 // type DivProps = React.HTMLAttributes<HTMLDivElement>;
 // type MotionDivProps = HTMLMotionProps<'div'> & DivProps;
@@ -311,7 +312,7 @@ export function FeaturesSection() {
                 Proven Results for Growing Businesses
               </h2>
               <p className={cn("mx-auto max-w-2xl text-sm text-muted-foreground sm:text-lg", dmSans.className)}>
-                Transform your organisations productivity with AI-powered tools that deliver measurable
+                Transform your organisation's productivity with AI-powered tools that deliver measurable
                 business impact.
               </p>
             </MotionDiv>
@@ -354,15 +355,13 @@ export function FeaturesSection() {
           transition={{ delay: 0.4 }}
           className="mt-12 text-center"
         >
-          <Link
-            href="/solutions"
-            className="group inline-flex items-center rounded-full bg-primary/10 px-4 py-1 text-sm ring-1 ring-primary/20 backdrop-blur-sm transition-all duration-300 hover:bg-primary/20 hover:ring-primary/30"
-          >
-            <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+          <Button variant="outline" size="lg" className="group" asChild>
+            <Link href="/solutions" className="flex items-center gap-2">
+              <Zap className="h-4 w-4 transition-transform duration-300 group-hover:rotate-12" />
               Discover all solutions
-            </span>
-            <ArrowRight className="ml-2 h-4 w-4 text-primary transition-transform group-hover:translate-x-0.5" />
-          </Link>
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+            </Link>
+          </Button>
         </MotionDiv>
       </Container>
     </section>

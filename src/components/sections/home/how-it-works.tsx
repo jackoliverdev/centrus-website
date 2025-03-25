@@ -39,43 +39,42 @@ const steps: Step[] = [
   {
     title: 'Upload Documents',
     description:
-      'Start by uploading your company documents. We support PDFs, Word documents, and more.',
+      'Begin by uploading your company documents. Our AI can read most common document types.',
     icon: Upload,
     color: 'bg-[#3B00ff]',
     glowColor: 'shadow-[#3B00ff]/20',
-    features: ['Bulk file upload', 'Automated text extraction', 'Secure date storage'],
+    features: ['Upload multiple files at once', 'Automatic reading of documents', 'Secure storage of content'],
   },
   {
-    title: 'AI Training',
-    description: 'Our AI processes your documents for efficient retrieval and contextual responses.',
+    title: 'AI Learning',
+    description: 'Our AI learns from your company knowledge to deliver speedy and relevant answers.',
     icon: Brain,
     color: 'bg-[#cc00ff]',
     glowColor: 'shadow-[#cc00ff]/20',
     features: [
-      'Smart document indexing',
-      'Vector-based retrieval',
-      'Real-time response generation'
+      'Smart content organisation',
+      'Quick searching capabilities',
+      'Instant answer generation'
     ],
   },
   {
     title: 'Set Permissions',
-    description: 'Configure access levels and security settings for different team members.',
+    description: 'Classify business documents and have full control over how your team access it.',
     icon: Shield,
     color: 'bg-[#00ff94]',
     glowColor: 'shadow-[#00ff94]/20',
-    features: ['Role-based access control', 'Audit chat history logs', 'Data encryption'],
+    features: ['Custom access for team', 'Track conversation history', 'Enhanced security measures'],
   },
   {
     title: 'Start Using',
-    description:
-      'Begin interacting with your AI assistant to retrieve information and get answers.',
+    description: 'Ask questions to get answers and generate content based on your business knowledge.',
     icon: MessageSquare,
     color: 'bg-[#FFA800]',
     glowColor: 'shadow-[#FFA800]/20',
     features: [
-      'Document-based responses',
-      'Multi-document search',
-      'Source citations',
+      'Answers tailored to your needs',
+      'Search across all documents',
+      'See sources of information'
     ],
   },
 ];
@@ -235,6 +234,9 @@ function BaseTitle() {
         </span>
       </div>
       <h2 className={cn("text-3xl font-bold sm:text-4xl", dmSans.className)}>How Centrus Works</h2>
+      <p className={cn("mt-2 mx-auto max-w-2xl text-sm text-muted-foreground sm:text-lg", dmSans.className)}>
+        Get started in minutes with our seamless setup process. Transform your business workflows quickly and start working smarter with AI right away.
+      </p>
     </>
   );
 }
@@ -262,7 +264,7 @@ export function HowItWorksSection() {
         </MotionDiv>
       </Container>
 
-      <Container>
+      <Container className="mt-[-40px]">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (
             <StepCard key={step.title} step={step} index={index} />

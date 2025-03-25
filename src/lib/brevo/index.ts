@@ -70,7 +70,9 @@ class Brevo {
       (response) => response,
       (error: AxiosError) => {
         const response = error.response;
-        const message = response?.data?.message || error.message;
+        const message = response?.data && typeof response.data === 'object' && 'message' in response.data 
+          ? String(response.data.message) 
+          : error.message;
         const code = response?.status || 'UNKNOWN';
         
         throw new BrevoError(message, code, response?.data);

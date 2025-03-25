@@ -70,9 +70,9 @@ export function IntegrationsFaq() {
           </div>
 
           <h2 className={cn("mt-3 sm:mt-4 text-xl font-bold sm:text-4xl", dmSans.className)}>
-            Common Questions
+            Frequently Asked Questions
           </h2>
-          <p className={cn("mt-2 sm:mt-4 text-sm sm:text-lg text-muted-foreground", dmSans.className)}>
+          <p className={cn("mt-2 sm:mt-4 text-sm sm:text-lg text-muted-foreground mx-auto max-w-2xl", dmSans.className)}>
             Everything you need to know about our integrations and how they work.
           </p>
         </MotionDiv>
@@ -112,7 +112,7 @@ export function IntegrationsFaq() {
                   >
                     <span
                       className={cn(
-                        'text-sm sm:text-base font-medium transition-colors',
+                        'text-sm sm:text-base font-medium transition-colors text-left',
                         openIndex === index ? 'text-primary' : 'text-foreground'
                       )}
                     >
@@ -132,7 +132,7 @@ export function IntegrationsFaq() {
                     )}
                   >
                     <div className="overflow-hidden px-3 sm:px-4">
-                      <div className={cn("text-sm sm:text-base text-muted-foreground", dmSans.className)}>
+                      <div className={cn("text-sm sm:text-base text-muted-foreground text-left", dmSans.className)}>
                         {faq.answer}
                       </div>
                     </div>

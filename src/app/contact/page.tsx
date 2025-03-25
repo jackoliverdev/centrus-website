@@ -6,7 +6,33 @@ import { ContactHero } from '@/components/sections/contact/contact-hero';
 
 export const metadata: Metadata = {
   title: 'Contact',
-  description: 'Get in touch with our team. We can help you transform your business with AI.',
+  description: 'Get in touch with our team. We can help you transform your organisation with AI-powered intelligence and personalised solutions.',
+  keywords: 'contact Centrus AI, get in touch, support enquiries, sales contact, enterprise AI help, technical support, request information, business enquiry',
+  openGraph: {
+    title: 'Contact Us | Centrus AI',
+    description: 'Reach out to our expert team for information about how Centrus AI can transform your organisation\'s knowledge management capabilities.',
+    type: 'website',
+    url: 'https://centrus.ai/contact',
+    siteName: 'Centrus AI',
+    images: [
+      {
+        url: '/logo.png',
+        width: 901,
+        height: 901,
+        alt: 'Centrus AI Contact',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Get in Touch | Centrus AI',
+    description: 'Connect with our team to discuss your organisation\'s needs and discover how our AI solutions can enhance your business intelligence.',
+    images: ['/logo.png'],
+    creator: '@centrusai',
+  },
+  alternates: {
+    canonical: 'https://centrus.ai/contact',
+  },
 };
 
 export default function ContactPage() {

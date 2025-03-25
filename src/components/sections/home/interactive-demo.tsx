@@ -3,6 +3,7 @@
 import * as React from 'react';
 import { motion, AnimatePresence, useMotionValue, useInView } from 'framer-motion';
 import { Sparkles, RefreshCw } from 'lucide-react';
+import { DM_Sans } from 'next/font/google';
 
 import { Container } from '@/components/ui/container';
 import { ChatFrame } from '@/components/ui/chat-frame';
@@ -11,8 +12,14 @@ import { CentrusMessage } from './chat/centrus-message';
 import { ThinkingState } from './chat/thinking-state';
 import { homeContent } from '@/content/home';
 import { springs } from '@/lib/utils/chat-animations';
+import { cn } from '@/lib/utils/helpers';
 
 const { conversations } = homeContent.chatShowcase;
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+});
 
 export function InteractiveDemo() {
   // Current conversation
@@ -251,7 +258,7 @@ export function InteractiveDemo() {
               </span>
             </h2>
             
-            <p className="mx-auto max-w-2xl text-sm text-muted-foreground md:text-base">
+            <p className={cn("mx-auto max-w-2xl md:max-w-3xl lg:max-w-4xl text-sm text-muted-foreground sm:text-lg", dmSans.className)}>
               See how Centrus AI helps your team find information instantly, without endless searching.
             </p>
           </motion.div>

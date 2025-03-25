@@ -70,37 +70,183 @@ export const homeContent = {
     conversations: [
       {
         question:
-          'Hey Centrus, what was our Q4 revenue numbers compared to target?',
+          'What are our key differentiators against Competitor X?',
         answer:
-          'I checked the Q4 financial reports - we hit £2.8M in revenue, exceeding our £2.5M target by 12%. This continues our trend of strong performance.',
+          'Our advantages over Competitor X: 1) 40% faster implementation time, 2) Native integration with Microsoft products, 3) UK-based customer support, 4) Customisable reporting dashboard',
         source: {
-          filename: 'Q4_2023_Financial_Report.pdf',
+          filename: 'Competitive_Analysis.pdf',
+          url: '/question-showcase/competitor-analysis',
+        },
+        tags: ['sales'],
+        chatTitle: 'Comparison versus Competitor X',
+      },
+      {
+        question:
+          'Can you suggest some blog post topics about our new AI integration feature?',
+        answer:
+          'Based on our content strategy, try these topics: "5 Ways AI Transforms Workflow Efficiency", "Case Study: 32% Productivity Boost with AI", and "AI Integration: Setup Guide in Under 10 Minutes".',
+        source: {
+          filename: 'Content_Strategy.pdf',
+          url: '/question-showcase/content-strategy',
+        },
+        tags: ['marketing'],
+        chatTitle: 'Blog topic ideas for AI integration features',
+      },
+      {
+        question:
+          'Can you check our business liability polict and identify any key exclusions?',
+        answer:
+          '1) Coverage limit is £2M per incident with £50K excess, 2) Claims must be filed within 60 days of incident, 3) Damage from natural disasters not endorsed.',
+        source: {
+          filename: 'Business_Insurance.pdf',
+          url: '/question-showcase/policy-exclusions',
+        },
+        tags: ['legal'],
+        chatTitle: 'Key exclusions in Insurance policy',
+      },
+      {
+        question:
+          `The Johnsons want to upgrade 20 guests from classic to luxury drinks package. What's the price difference?`,
+        answer:
+          'Upgrading from Classic (£50) to Luxury package (£100) for 20 guests increases the cost by £1,000, bringing the total wedding cost to £12,395.43.',
+        source: {
+          filename: 'Wedding_Pricing.pdf',
+          url: '/question-showcase/wedding-packages',
+        },
+        tags: ['sales'],
+        chatTitle: 'Wedding drinks package upgrade',
+      },
+      {
+        question:
+          'What time does the surprise guest speaker arrive for the event tomorrow?',
+        answer:
+          'The surprise guest Sarah Johnson, arrives at 14:30, entering through the East entrance. She requires 15 minutes for mic setup before her 15:00 presentation.',
+        source: {
+          filename: '03/02/2025_Itinerary.pdf',
+          url: '/question-showcase/event-schedule',
+        },
+        tags: ['customer support'],
+        chatTitle: 'Surprise guest speaker arrival information',
+      },
+      {
+        question:
+          `How do I troubleshoot when a customer can't access their admin dashboard?`,
+        answer:
+          'First check account status, then verify permissions level. If both are correct, ask them to clear browser cache and disable extensions.',
+        source: {
+          filename: 'Troubleshoot_Guide.pdf',
+          url: '/question-showcase/access-issues',
+        },
+        tags: ['customer support'],
+        chatTitle: 'Admin dashboard access troubleshooting',
+      },
+      {
+        question:
+          `What's our company policy on remote working days?`,
+        answer:
+          'Our flexible working policy allows 3 remote days weekly with manager approval. Core hours are 8am-5pm UK time for all employees. Teams must coordinate in-office days for collaboration purposes.',
+        source: {
+          filename: 'Working_Policy.pdf',
+          url: '/question-showcase/remote-policy',
+        },
+        tags: ['policy'],
+        chatTitle: 'Remote working policy guidelines',
+      },
+      {
+        question:
+          `What's the approval process for offering a 20% discount?`,
+        answer:
+          'Discounts between 15-25% require Sales Director approval via the Deals portal. Submit at least 48 hours before quote delivery. Include contract length and total value.',
+        source: {
+          filename: 'Discount_Guidelines.pdf',
+          url: '/question-showcase/discount-policy',
+        },
+        tags: ['sales'],
+        chatTitle: 'Approval process for discount on deals',
+      },
+      {
+        question:
+          'What are the key steps in our employee onboarding process?',
+        answer:
+          'Our onboarding process has 5 key steps: paperwork completion, equipment setup, compliance training, team introductions, and a 90-day review. The full process typically takes 3 months to complete.',
+        source: {
+          filename: 'Employee_Handbook.pdf',
+          url: '/question-showcase/employee-onboarding',
+        },
+        tags: ['Human Resources'],
+        chatTitle: 'Employee Onboarding Process Clarification',
+      },
+      {
+        question:
+          'How should I respond when prospects say our solution is too expensive?',
+        answer:
+          'When facing price objections: 1) Reframe as investment not cost, 2) Highlight average ROI, 3) Explain our 15% effectiveness increase, 4) Offer quarterly payment option, 5) Share similar case studies.',
+        source: {
+          filename: 'Objection_Playbook.pdf',
+          url: '/question-showcase/objection-handling',
+        },
+        tags: ['sales'],
+        chatTitle: 'Strategies for addressing price objections',
+      },
+      {
+        question:
+          'Can you suggest email subject lines for our upcoming webinar?',
+        answer:
+          'Top-performing options: "Join 3,000+ Professionals: AI Workflow Webinar", "Cut Processing Time by 50% [Free Webinar]", and "Tomorrow Only: Expert AI Implementation Strategies".',
+        source: {
+          filename: 'Email_Playbook.pdf',
+          url: '/question-showcase/email-marketing',
+        },
+        tags: ['marketing'],
+        chatTitle: 'Email subject line suggestions for webinar',
+      },
+      {
+        question:
+          'What should I do if I suspect a data breach?',
+        answer:
+          'For potential breaches: 1) Report immediately to security@company.co.uk, 2) Document what happened, 3) Do not discuss with external parties, 4) IT will secure your device within 30 minutes.',
+        source: {
+          filename: 'Data_Security.pdf',
+          url: '/question-showcase/security-policy',
+        },
+        tags: ['policy'],
+        chatTitle: 'Data breach response procedure steps',
+      },
+      {
+        question:
+          'How can we repurpose our latest whitepaper for different marketing channels?',
+        answer:
+          'You can breakdown your latest whitepaper on AI Integration into formats such as: LinkedIn articles, blog posts, social media posts, and video content.',
+        source: {
+          filename: 'Content_Strategy.pdf',
+          url: '/question-showcase/content-repurposing',
+        },
+        tags: ['marketing'],
+        chatTitle: 'Whitepaper repurposing for marketing',
+      },
+      {
+        question:
+          'What was our Q4 2023 revenue numbers compared to target?',
+        answer:
+          'I checked the Q4 2023 financial reports - we hit £2.8M in revenue, exceeding our £2.5M target by 12%. This continues our trend of strong performance.',
+        source: {
+          filename: 'Q42023_Financial_Report.pdf',
           url: '/question-showcase/q4-financials',
         },
         tags: ['finance'],
-        chatTitle: 'Financial Performance',
+        chatTitle: 'Q4 revenue performance versus targets',
       },
       {
-        question: 'Can you explain our current travel expense policy?',
+        question:
+          'How much parental leave are new fathers entitled to?',
         answer:
-          'Here are the key points:\n- Daily meal allowance: £35\n- Economy flights for trips under 6 hours\n- Business class allowed for longer flights\n- All expenses require receipts.',
+          `New fathers receive 4 weeks of fully paid paternity leave plus an additional 8 weeks at 50% pay. Leave can be taken in blocks until the child's first birthday with 4 weeks' notice.`,
         source: {
-          filename: 'Travel_Policy_2024.doc',
-          url: '/question-showcase/travel-policy',
+          filename: 'Parental_Policy.pdf',
+          url: '/question-showcase/parental-leave',
         },
         tags: ['policy'],
-        chatTitle: 'Company Policies',
-      },
-      {
-        question: 'What is the updated colour palette for the new product launch?',
-        answer:
-          'The updated colour palette includes Primary: #4F46E5, Secondary: #EC4899 and Accent #2B9CE5.',
-        source: {
-          filename: 'Product_Launch_Assets.pdf',
-          url: '/question-showcase/brand-assets',
-        },
-        tags: ['marketing'],
-        chatTitle: 'Brand Resources',
+        chatTitle: 'Paternity leave entitlement explanation',
       },
     ],
   },

@@ -104,7 +104,7 @@ export function ContactFaq() {
                   >
                     <span
                       className={cn(
-                        'text-sm sm:text-base font-medium transition-colors',
+                        'text-sm sm:text-base font-medium transition-colors text-left',
                         openIndex === index ? 'text-primary' : 'text-foreground'
                       )}
                     >
@@ -124,7 +124,7 @@ export function ContactFaq() {
                     )}
                   >
                     <div className="overflow-hidden px-3 sm:px-4">
-                      <div className="text-sm sm:text-base text-muted-foreground">
+                      <div className="text-sm sm:text-base text-muted-foreground text-left">
                         {faq.answer}
                       </div>
                     </div>

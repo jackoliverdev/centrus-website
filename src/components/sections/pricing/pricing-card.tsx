@@ -70,7 +70,7 @@ export function PricingCard({
                     <span className="text-3xl font-bold tracking-tight">£{displayPrice}</span>
                     <span className="text-sm font-semibold text-muted-foreground">/month</span>
                     {isAnnual && (
-                      <span className="text-sm font-medium text-emerald-500">Save 20%</span>
+                      <span className="text-sm font-medium text-emerald-500">Save 25%</span>
                     )}
                   </>
                 ) : (

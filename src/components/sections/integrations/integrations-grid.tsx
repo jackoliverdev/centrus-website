@@ -37,7 +37,7 @@ const integrations: Integration[] = [
   },
   {
     name: 'WhatsApp',
-    description: 'Access your company\'s entire knowledge base from your pocket. Query and retrieve information instantly through WhatsApp anywhere, anytime.',
+    description: 'Access your company\'s entire knowledge base from your pocket. Ask and retrieve information instantly through WhatsApp anywhere, anytime.',
     integrationType: 'Messaging Interface',
     logo: '/logos/whatsapp.svg',
     color: 'from-[#10b981] to-[#059669]',

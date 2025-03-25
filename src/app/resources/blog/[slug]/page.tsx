@@ -19,14 +19,21 @@ export function generateMetadata({ params }: BlogPostPageProps): Metadata {
   const post = blogPosts.find(post => post.slug === params.slug);
   if (!post) return {};
 
+  // Generate keywords from post tags, category and title keywords
+  const keywords = `${post.tags.join(', ')}, ${post.category}, AI insights, business transformation, ${post.title.toLowerCase().split(' ').filter(word => word.length > 3).join(', ')}`;
+
   return {
     title: post.title,
     description: post.description,
+    keywords: keywords,
     openGraph: {
       title: post.title,
       description: post.description,
       type: 'article',
       url: `https://centrus.ai/resources/blog/${post.slug}`,
+      siteName: 'Centrus AI',
+      publishedTime: post.date,
+      authors: [post.author.name],
       images: [
         {
           url: post.image,
@@ -41,6 +48,10 @@ export function generateMetadata({ params }: BlogPostPageProps): Metadata {
       title: post.title,
       description: post.description,
       images: [post.image],
+      creator: '@centrusai',
+    },
+    alternates: {
+      canonical: `https://centrus.ai/resources/blog/${post.slug}`,
     },
   };
 }

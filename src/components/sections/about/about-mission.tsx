@@ -10,7 +10,7 @@ const missions = [
     icon: Target,
     title: 'Our Purpose',
     description:
-      'To revolutionise how organisations harness AI, making enterprise-grade intelligence accessible and practical for forward-thinking businesses.',
+      'To assist organisations to use AI to its full potential, making enterprise-grade intelligence accessible and practical for forward-thinking businesses.',
     color: 'from-[#3B00ff] to-[#3B00ff]',
     bgGradient: 'from-[#3B00ff]/10 via-[#3B00ff]/5 to-transparent',
     hoverGradient: 'group-hover:from-[#3B00ff]/20 group-hover:via-[#3B00ff]/10 group-hover:to-transparent',

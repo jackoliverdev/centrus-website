@@ -1,9 +1,11 @@
+'use client';
+
 import { Facebook, Instagram, Linkedin, Youtube, ArrowRight, Sparkles, Zap } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Rajdhani } from 'next/font/google';
+import { useState } from 'react';
 
-import { NewsletterForm } from '@/components/forms/newsletter-form';
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/ui/container';
 import { cn } from '@/lib/utils';
@@ -68,6 +70,45 @@ const navigation = {
 };
 
 export function Footer() {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [message, setMessage] = useState('');
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email || !email.includes('@')) {
+      setStatus('error');
+      setMessage('Please enter a valid email address');
+      return;
+    }
+
+    try {
+      setStatus('loading');
+      
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to subscribe');
+      }
+
+      setStatus('success');
+      setMessage('Thanks for subscribing!');
+      setEmail('');
+    } catch (error) {
+      setStatus('error');
+      setMessage(error instanceof Error ? error.message : 'Something went wrong');
+    }
+  };
+
   return (
     <footer className="mt- relative border-t bg-background">
       {/* Newsletter Section */}
@@ -101,18 +142,34 @@ export function Footer() {
                   </div>
                 </div>
                 <div className="w-full px-4 md:px-8 md:w-auto md:pt-6">
-                  <div className="flex flex-col space-y-2">
+                  <form onSubmit={handleNewsletterSubmit} className="flex flex-col space-y-2">
                     <div className="flex w-full items-center space-x-2">
                       <input
                         type="email"
                         placeholder="name@company.com"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        disabled={status === 'loading'}
                         className="h-10 flex-1 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:flex-initial md:min-w-[480px]"
                       />
-                      <Button type="submit" className="whitespace-nowrap">
-                        <span className="block md:hidden text-white">Join</span>
-                        <span className="hidden md:block text-white">Join Now</span>
+                      <Button 
+                        type="submit" 
+                        className="whitespace-nowrap"
+                        disabled={status === 'loading'}
+                      >
+                        <span className="block md:hidden text-white">
+                          {status === 'loading' ? 'Joining...' : 'Join'}
+                        </span>
+                        <span className="hidden md:block text-white">
+                          {status === 'loading' ? 'Joining...' : 'Join Now'}
+                        </span>
                       </Button>
                     </div>
+                    {message && (
+                      <p className={`text-xs ${status === 'success' ? 'text-green-500' : 'text-red-500'}`}>
+                        {message}
+                      </p>
+                    )}
                     <p className="text-xs text-muted-foreground">
                       By joining, you agree to our{' '}
                       <Link 
@@ -122,7 +179,7 @@ export function Footer() {
                         Privacy Policy
                       </Link>
                     </p>
-                  </div>
+                  </form>
                 </div>
               </div>
             </div>

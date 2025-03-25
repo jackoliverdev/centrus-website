@@ -48,7 +48,7 @@ export function PricingToggle({ isAnnual, onToggle }: PricingToggleProps) {
           animate={{ opacity: 1, scale: 1 }}
           className="ml-2 whitespace-nowrap rounded-full bg-emerald-500/10 px-2 py-0.5 text-[11px] font-medium text-emerald-500"
         >
-          Save 20%
+          Save 25%
         </motion.div>
       )}
     </div>

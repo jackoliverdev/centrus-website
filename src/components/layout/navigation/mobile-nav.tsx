@@ -99,7 +99,12 @@ export function MobileNav() {
             <div className="flex flex-col gap-2 p-4">
               <Link
                 href="/"
-                className="flex items-center justify-between py-2 text-sm font-medium text-muted-foreground hover:text-primary"
+                className={cn(
+                  "flex items-center justify-between py-2 text-sm font-medium",
+                  pathname === "/" 
+                    ? "text-[#041b70] dark:text-[#2b9ce5]" 
+                    : "text-muted-foreground hover:text-primary"
+                )}
               >
                 <span className="flex items-center">
                   <Home className="mr-2 h-4 w-4" />
@@ -110,7 +115,12 @@ export function MobileNav() {
 
               <Link
                 href="/solutions"
-                className="flex items-center justify-between py-2 text-sm font-medium text-muted-foreground hover:text-primary"
+                className={cn(
+                  "flex items-center justify-between py-2 text-sm font-medium",
+                  pathname === "/solutions" 
+                    ? "text-[#041b70] dark:text-[#2b9ce5]" 
+                    : "text-muted-foreground hover:text-primary"
+                )}
               >
                 Solutions
                 <ChevronRight className="h-4 w-4" />
@@ -118,7 +128,12 @@ export function MobileNav() {
 
               <Link
                 href="/integrations"
-                className="flex items-center justify-between py-2 text-sm font-medium text-muted-foreground hover:text-primary"
+                className={cn(
+                  "flex items-center justify-between py-2 text-sm font-medium",
+                  pathname === "/integrations" 
+                    ? "text-[#041b70] dark:text-[#2b9ce5]" 
+                    : "text-muted-foreground hover:text-primary"
+                )}
               >
                 Integrations
                 <ChevronRight className="h-4 w-4" />
@@ -126,7 +141,12 @@ export function MobileNav() {
 
               <Link
                 href="/pricing"
-                className="flex items-center justify-between py-2 text-sm font-medium text-muted-foreground hover:text-primary"
+                className={cn(
+                  "flex items-center justify-between py-2 text-sm font-medium",
+                  pathname === "/pricing" 
+                    ? "text-[#041b70] dark:text-[#2b9ce5]" 
+                    : "text-muted-foreground hover:text-primary"
+                )}
               >
                 Pricing
                 <ChevronRight className="h-4 w-4" />
@@ -134,7 +154,14 @@ export function MobileNav() {
 
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="resources" className="border-none">
-                  <AccordionTrigger className="py-2 text-sm hover:no-underline focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0">
+                  <AccordionTrigger 
+                    className={cn(
+                      "py-2 text-sm hover:no-underline focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0",
+                      pathname.startsWith('/resources')
+                        ? "text-[#041b70] dark:text-[#2b9ce5]"
+                        : ""
+                    )}
+                  >
                     Resources
                   </AccordionTrigger>
                   <AccordionContent>
@@ -143,9 +170,21 @@ export function MobileNav() {
                         <Link
                           key={item.href}
                           href={item.href}
-                          className="flex flex-col space-y-1 rounded-md bg-muted/50 p-3 hover:bg-muted"
+                          className={cn(
+                            "flex flex-col space-y-1 rounded-md bg-muted/50 p-3 hover:bg-muted",
+                            pathname === item.href
+                              ? "ring-1 ring-[#2b9ce5]/50"
+                              : ""
+                          )}
                         >
-                          <div className="text-sm font-medium">{item.title}</div>
+                          <div className={cn(
+                            "text-sm font-medium",
+                            pathname === item.href
+                              ? "text-[#041b70] dark:text-[#2b9ce5]"
+                              : ""
+                          )}>
+                            {item.title}
+                          </div>
                           <p className="text-xs text-muted-foreground">{item.description}</p>
                         </Link>
                       ))}

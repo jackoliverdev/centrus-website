@@ -63,8 +63,8 @@ export function TrialFaq() {
             </span>
           </div>
 
-          <h2 className="mt-3 sm:mt-4 text-xl font-bold sm:text-4xl">Common Questions</h2>
-          <p className="mt-2 sm:mt-4 text-sm sm:text-lg text-muted-foreground">
+          <h2 className="mt-3 sm:mt-4 text-xl font-bold sm:text-4xl">Frequently Asked Questions</h2>
+          <p className="mt-2 sm:mt-4 text-sm sm:text-lg text-muted-foreground mx-auto max-w-2xl">
             Everything you need to know about getting started with Centrus AI
           </p>
         </MotionDiv>
@@ -104,7 +104,7 @@ export function TrialFaq() {
                   >
                     <span
                       className={cn(
-                        'text-sm sm:text-base font-medium transition-colors',
+                        'text-sm sm:text-base font-medium transition-colors text-left',
                         openIndex === index ? 'text-primary' : 'text-foreground'
                       )}
                     >
@@ -124,7 +124,7 @@ export function TrialFaq() {
                     )}
                   >
                     <div className="overflow-hidden px-3 sm:px-4">
-                      <div className="text-sm sm:text-base text-muted-foreground">
+                      <div className="text-sm sm:text-base text-muted-foreground text-left">
                         {faq.answer}
                       </div>
                     </div>
