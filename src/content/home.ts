@@ -78,7 +78,7 @@ export const homeContent = {
           url: '/question-showcase/competitor-analysis',
         },
         tags: ['sales'],
-        chatTitle: 'Comparison versus Competitor X',
+        chatTitle: 'Comparison versus Competitor',
       },
       {
         question:

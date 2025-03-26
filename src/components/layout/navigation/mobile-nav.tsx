@@ -1,6 +1,6 @@
 'use client';
 
-import { Menu, Home, ChevronRight, Mail, ArrowRight, ExternalLink } from 'lucide-react';
+import { Menu, Home, ChevronRight, Mail, ArrowRight, ExternalLink, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -16,7 +16,7 @@ import {
 } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 
 const resources = [
   {
@@ -78,10 +78,13 @@ export function MobileNav() {
           <span className="sr-only">Toggle Menu</span>
         </Button>
       </SheetTrigger>
-      <SheetContent side="right" className="w-full max-w-xs p-0 sm:max-w-sm">
+      <SheetContent 
+        side="right" 
+        className="w-full max-w-xs p-0 sm:max-w-sm [&>button]:hidden"
+      >
         <div className="flex h-full flex-col">
-          {/* Header with Logo */}
-          <div className="flex items-center border-b p-4">
+          {/* Custom Header with Logo and Close Button */}
+          <div className="flex items-center justify-between border-b p-4">
             <Link href="/" className="flex items-center space-x-1" onClick={() => setOpen(false)}>
               <Image src="/logo.png" alt="Centrus AI" width={901} height={901} className="h-10 w-10" />
               <span className={cn(
@@ -91,6 +94,11 @@ export function MobileNav() {
                 Centrus AI
               </span>
             </Link>
+            
+            <SheetClose className="rounded-full p-1.5 text-muted-foreground hover:bg-muted transition-colors focus:outline-none">
+              <X className="h-5 w-5" />
+              <span className="sr-only">Close</span>
+            </SheetClose>
           </div>
 
           {/* Navigation Content */}
@@ -173,7 +181,7 @@ export function MobileNav() {
                           className={cn(
                             "flex flex-col space-y-1 rounded-md bg-muted/50 p-3 hover:bg-muted",
                             pathname === item.href
-                              ? "ring-1 ring-[#2b9ce5]/50"
+                              ? "ring-1 ring-[#2b9ce5]/50 mx-[1px]"
                               : ""
                           )}
                         >

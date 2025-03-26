@@ -302,7 +302,7 @@ export function IntegrationsGrid() {
           >
             <h2 className="mb-4 bg-gradient-to-br from-foreground to-foreground/80 bg-clip-text font-heading text-3xl font-bold text-transparent sm:text-4xl">
               Powerful Integrations for
-              Enterprise Success
+              AI Success
             </h2>
             <p className="mx-auto max-w-2xl text-sm sm:text-lg text-muted-foreground">
               Connect your essential tools to enhance

@@ -228,7 +228,7 @@ export function HeroSection() {
             <motion.div className="mb-6 inline-flex items-center rounded-full bg-primary/10 px-4 py-1 text-sm ring-1 ring-primary/20 backdrop-blur-sm">
               <BrainCircuit className="mr-2 h-4 w-4 text-primary" />
               <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
-                Intelligent Enterprise AI
+                Intelligent Business AI
               </span>
             </motion.div>
 
