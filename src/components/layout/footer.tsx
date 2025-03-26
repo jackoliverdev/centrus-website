@@ -194,9 +194,8 @@ export function Footer() {
           <div className="col-span-12 flex flex-col items-center md:col-span-4 md:items-start">
             <Link href="/" className="group inline-flex items-center space-x-2">
               <div className="relative">
-                <div className="absolute -inset-1 animate-pulse rounded-full bg-primary/20 blur-sm transition-all group-hover:bg-primary/30 group-hover:blur-md" />
                 <div className="relative">
-                  <div className="animate-spin-slow absolute -inset-2 rounded-full border border-primary/20" />
+                  <div className="absolute -inset-2 rounded-full border border-primary/10" />
                   <Image
                     src="/logo.png"
                     alt="Centrus AI Logo"
