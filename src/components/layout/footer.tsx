@@ -198,7 +198,7 @@ export function Footer() {
                 <div className="relative">
                   <div className="animate-spin-slow absolute -inset-2 rounded-full border border-primary/20" />
                   <Image
-                    src="/logo.svg"
+                    src="/logo.png"
                     alt="Centrus AI Logo"
                     width={32}
                     height={32}

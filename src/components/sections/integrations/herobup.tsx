@@ -7,6 +7,7 @@ import Link from 'next/link';
 import React from 'react';
 import { DM_Sans } from 'next/font/google';
 
+import { DataPacket } from '@/components/network/data-packet';
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/ui/container';
 import { useNetworkAnimation } from '@/lib/hooks/use-network-animation';
@@ -100,11 +101,11 @@ export function IntegrationsHero() {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const [windowWidth, setWindowWidth] = React.useState(0);
 
-  // Use dummy source positions to minimize animation effects
+  // Simplify animation system - remove packet animations
   const { activeSourceIndex } = useNetworkAnimation(
     logos.map(logo => ({
-      x: 0.5, // Use center positions to minimize movement
-      y: 0.5,
+      x: parseFloat(logo.position.desktop.x) / 100,
+      y: parseFloat(logo.position.desktop.y) / 100,
     })),
     { x: 0.5, y: 0.5 }
   );
@@ -282,12 +283,7 @@ export function IntegrationsHero() {
                       key={index}
                       initial={{ opacity: 0, scale: 0 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      transition={{ 
-                        delay: logo.delay, 
-                        type: 'spring',
-                        stiffness: 200,
-                        damping: 20 
-                      }}
+                      transition={{ delay: logo.delay, type: 'spring' }}
                       className="absolute"
                       style={{ left: position.x, top: position.y }}
                     >
@@ -301,18 +297,17 @@ export function IntegrationsHero() {
                           repeat: Infinity,
                           delay: index * 0.2,
                           ease: 'easeInOut',
-                          repeatType: 'loop'
                         }}
-                        className="relative h-16 w-16 rounded-xl border border-primary/20 bg-background/80 p-2 
-                                backdrop-blur-sm hover:border-primary/30 sm:h-16
+                        className="relative h-16 w-16 rounded-xl border border-primary/20 bg-background/50 p-2 
+                                shadow-lg shadow-primary/5 backdrop-blur-sm transition-colors hover:border-primary/40 sm:h-16
                                 sm:w-16 sm:p-3 md:h-20 md:w-20 md:p-4"
                       >
+                        {/* Remove active node glow */}
                         <Image
                           src={logo.src}
                           alt="Integration logo"
                           fill
                           className="object-contain p-2 sm:p-2.5 md:p-3"
-                          style={{ willChange: 'auto' }}
                         />
                       </motion.div>
                     </motion.div>
@@ -323,12 +318,7 @@ export function IntegrationsHero() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ 
-                    delay: 0.2, 
-                    type: 'spring',
-                    stiffness: 200,
-                    damping: 20 
-                  }}
+                  transition={{ delay: 0.2, type: 'spring' }}
                   className="absolute top-1/2 z-10 -translate-y-1/2"
                 >
                   <motion.div
@@ -341,10 +331,10 @@ export function IntegrationsHero() {
                       duration: 3,
                       repeat: Infinity,
                       ease: 'easeInOut',
-                      repeatType: 'loop'
                     }}
                   >
                     <Bot className="h-8 w-8 text-primary sm:h-10 sm:w-10 md:h-12 md:w-12" />
+                    {/* Remove processing rings */}
                   </motion.div>
                 </motion.div>
               </div>
