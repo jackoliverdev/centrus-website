@@ -234,7 +234,7 @@ With Centrus, you're not just adopting an AI tool; you're gaining a partner comm
     slug: 'how-to-prompt',
     title: 'How to Write Prompts for the Best AI Responses',
     description: 'Artificial intelligence tools like ChatGPT have revolutionised how we solve problems, create content, and manage tasks across various industries. Learn how to craft effective prompts to get the best results.',
-    date: 'February 19, 2025',
+    date: 'March 19, 2025',
     category: 'AI & Machine Learning',
     image: '/images/BlogWritePrompts.png',
     author: authors.centrusTeam,
