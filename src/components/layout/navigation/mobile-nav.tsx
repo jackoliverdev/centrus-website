@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import * as React from 'react';
+import { useState } from 'react';
 import { Rajdhani } from 'next/font/google';
 import { cn } from '@/lib/utils';
 
@@ -52,14 +53,44 @@ const rajdhani = Rajdhani({
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false);
-  const [email, setEmail] = React.useState('');
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [message, setMessage] = useState('');
   const pathname = usePathname();
 
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Add your newsletter signup logic here
-    console.log('Newsletter signup:', email);
-    setEmail('');
+    
+    if (!email || !email.includes('@')) {
+      setStatus('error');
+      setMessage('Please enter a valid email address');
+      return;
+    }
+
+    try {
+      setStatus('loading');
+      
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to subscribe');
+      }
+
+      setStatus('success');
+      setMessage('Thanks for subscribing!');
+      setEmail('');
+    } catch (error) {
+      setStatus('error');
+      setMessage(error instanceof Error ? error.message : 'Something went wrong');
+    }
   };
 
   // Close menu on navigation
@@ -245,11 +276,30 @@ export function MobileNav() {
                     placeholder="Enter your work email"
                     value={email}
                     onChange={e => setEmail(e.target.value)}
+                    disabled={status === 'loading'}
                     className="h-9"
                   />
-                  <Button type="submit" className="h-9 w-full text-white">
-                    Get AI Updates
+                  <Button 
+                    type="submit" 
+                    className="h-9 w-full text-white"
+                    disabled={status === 'loading'}
+                  >
+                    {status === 'loading' ? 'Joining...' : 'Get AI Updates'}
                   </Button>
+                  {message && (
+                    <p className={`text-xs ${status === 'success' ? 'text-green-500' : 'text-red-500'}`}>
+                      {message}
+                    </p>
+                  )}
+                  <p className="text-xs text-muted-foreground">
+                    By joining, you agree to our{' '}
+                    <Link 
+                      href="/legal/privacy-policy" 
+                      className="text-primary hover:underline"
+                    >
+                      Privacy Policy
+                    </Link>
+                  </p>
                 </form>
               </div>
             </div>
