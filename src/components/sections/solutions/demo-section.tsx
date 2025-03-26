@@ -128,7 +128,7 @@ export function DemoSection() {
                 className="group"
                 asChild
               >
-                <Link href="http://localhost:3000/free-trial" className="flex items-center gap-2">
+                <Link href="/free-trial" className="flex items-center gap-2">
                   <RocketIcon className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
                   <span>Free Trial</span>
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
