@@ -9,6 +9,7 @@ import { DM_Sans } from 'next/font/google';
 
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/ui/container';
+import { useNetworkAnimation } from '@/lib/hooks/use-network-animation';
 
 const logos = [
   {
@@ -99,7 +100,14 @@ export function IntegrationsHero() {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const [windowWidth, setWindowWidth] = React.useState(0);
 
-  // Removed useNetworkAnimation hook that might be causing artifacts
+  // Use dummy source positions to minimize animation effects
+  const { activeSourceIndex } = useNetworkAnimation(
+    logos.map(logo => ({
+      x: 0.5, // Use center positions to minimize movement
+      y: 0.5,
+    })),
+    { x: 0.5, y: 0.5 }
+  );
 
   // Scroll-based animations
   const { scrollYProgress } = useScroll({
@@ -250,7 +258,7 @@ export function IntegrationsHero() {
               <div className="absolute inset-0 flex flex-col items-center justify-center">
                 <svg className="h-full w-full">
                   <defs>
-                    <pattern id="integrations-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
                       <path
                         d="M 40 0 L 0 0 0 40"
                         fill="none"
@@ -259,81 +267,86 @@ export function IntegrationsHero() {
                       />
                     </pattern>
                   </defs>
-                  <rect width="100%" height="100%" fill="url(#integrations-grid)" />
+
+                  {/* Background grid */}
+                  <rect width="100%" height="100%" fill="url(#grid)" />
+
+                  {/* Remove complex connection paths and data packets */}
                 </svg>
 
                 {/* Integration logos with responsive positioning - simplified */}
                 {logos.map((logo, index) => {
                   const position = getResponsivePosition(logo);
                   return (
-                    <div
+                    <motion.div
                       key={index}
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ 
+                        delay: logo.delay, 
+                        type: 'spring',
+                        stiffness: 200,
+                        damping: 20 
+                      }}
                       className="absolute"
                       style={{ left: position.x, top: position.y }}
                     >
                       <motion.div
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={{ 
-                          opacity: 1, 
-                          scale: 1,
-                          y: [0, -4, 0]
-                        }}
-                        transition={{ 
-                          delay: logo.delay, 
-                          type: 'spring',
-                          stiffness: 200,
-                          damping: 20,
-                          y: {
-                            duration: 2,
-                            repeat: Infinity,
-                            delay: index * 0.2,
-                            ease: 'easeInOut',
-                            repeatType: 'loop'
-                          }
-                        }}
                         whileHover={{ scale: 1.1 }}
-                        className="relative h-16 w-16 rounded-xl bg-background p-2 
-                                border border-primary/10 sm:h-16 sm:w-16 sm:p-3 md:h-20 md:w-20 md:p-4"
+                        animate={{
+                          y: [0, -4, 0],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          delay: index * 0.2,
+                          ease: 'easeInOut',
+                          repeatType: 'loop'
+                        }}
+                        className="relative h-16 w-16 rounded-xl border border-primary/20 bg-background/80 p-2 
+                                backdrop-blur-sm hover:border-primary/30 sm:h-16
+                                sm:w-16 sm:p-3 md:h-20 md:w-20 md:p-4"
                       >
-                        <div className="relative h-full w-full">
-                          <Image
-                            src={logo.src}
-                            alt="Integration logo"
-                            fill
-                            priority={index < 3}
-                            className="object-contain p-2 sm:p-2.5 md:p-3"
-                          />
-                        </div>
+                        <Image
+                          src={logo.src}
+                          alt="Integration logo"
+                          fill
+                          className="object-contain p-2 sm:p-2.5 md:p-3"
+                          style={{ willChange: 'auto' }}
+                        />
                       </motion.div>
-                    </div>
+                    </motion.div>
                   );
                 })}
 
                 {/* Center Bot with simplified animation */}
-                <div className="absolute top-1/2 z-10 -translate-y-1/2">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ 
+                    delay: 0.2, 
+                    type: 'spring',
+                    stiffness: 200,
+                    damping: 20 
+                  }}
+                  className="absolute top-1/2 z-10 -translate-y-1/2"
+                >
                   <motion.div
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ 
-                      opacity: 1, 
-                      scale: [1, 1.05, 1]
+                    className="relative flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 
+                            backdrop-blur-sm sm:h-20 sm:w-20 md:h-24 md:w-24"
+                    animate={{
+                      scale: [1, 1.05, 1],
                     }}
-                    transition={{ 
-                      delay: 0.2, 
-                      type: 'spring',
-                      stiffness: 200,
-                      damping: 20,
-                      scale: {
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: 'easeInOut',
-                        repeatType: 'loop'
-                      }
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: 'easeInOut',
+                      repeatType: 'loop'
                     }}
-                    className="relative flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 sm:h-20 sm:w-20 md:h-24 md:w-24"
                   >
                     <Bot className="h-8 w-8 text-primary sm:h-10 sm:w-10 md:h-12 md:w-12" />
                   </motion.div>
-                </div>
+                </motion.div>
               </div>
             </motion.div>
           </motion.div>
