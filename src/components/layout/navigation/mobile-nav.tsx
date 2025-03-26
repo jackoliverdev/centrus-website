@@ -82,8 +82,8 @@ export function MobileNav() {
         <div className="flex h-full flex-col">
           {/* Header with Logo */}
           <div className="flex items-center border-b p-4">
-            <Link href="/" className="flex items-center space-x-2" onClick={() => setOpen(false)}>
-              <Image src="/logo.svg" alt="Centrus AI" width={24} height={24} className="h-6 w-6" />
+            <Link href="/" className="flex items-center space-x-1" onClick={() => setOpen(false)}>
+              <Image src="/logo.png" alt="Centrus AI" width={901} height={901} className="h-10 w-10" />
               <span className={cn(
                 "text-xl font-bold text-[#041b70] dark:text-white",
                 rajdhani.className

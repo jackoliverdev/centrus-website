@@ -94,7 +94,7 @@ export const homeContent = {
       },
       {
         question:
-          'Can you check our business liability polict and identify any key exclusions?',
+          'Can you check our business liability policy and identify any key exclusions?',
         answer:
           '1) Coverage limit is £2M per incident with £50K excess, 2) Claims must be filed within 60 days of incident, 3) Damage from natural disasters not endorsed.',
         source: {

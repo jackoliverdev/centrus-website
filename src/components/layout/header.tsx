@@ -40,7 +40,7 @@ const Logo = React.memo(function Logo() {
     >
       <Link href="/" className="flex items-center space-x-1 transition-opacity hover:opacity-90">
         <div className="relative h-10 w-10">
-          <Image src="/logo.svg" alt="Centrus AI Logo" fill className="object-contain" priority />
+          <Image src="/logo.png" alt="Centrus AI Logo" fill className="object-contain" priority />
         </div>
         <span className={`text-2xl font-bold text-[#041b70] dark:text-white ${rajdhani.className}`}>
           Centrus AI
