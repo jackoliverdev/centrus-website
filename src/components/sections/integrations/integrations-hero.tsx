@@ -15,7 +15,7 @@ const logos = [
     src: '/logos/google-drive.svg',
     delay: 0,
     position: {
-      desktop: { x: '22%', y: '35%' },
+      desktop: { x: '22%', y: '30%' },
       tablet: { x: '25%', y: '30%' },
       mobile: { x: '10%', y: '10%' },
     },
@@ -24,7 +24,7 @@ const logos = [
     src: '/logos/ms-teams.svg',
     delay: 0.1,
     position: {
-      desktop: { x: '67.5%', y: '35%' },
+      desktop: { x: '67.5%', y: '30%' },
       tablet: { x: '64%', y: '30%' },
       mobile: { x: '70%', y: '10%' },
     },
@@ -33,7 +33,7 @@ const logos = [
     src: '/logos/whatsapp.svg',
     delay: 0.2,
     position: {
-      desktop: { x: '67.5%', y: '65%' },
+      desktop: { x: '67.5%', y: '70%' },
       tablet: { x: '64%', y: '70%' },
       mobile: { x: '70%', y: '85%' },
     },
@@ -42,7 +42,7 @@ const logos = [
     src: '/logos/hubspot.svg',
     delay: 0.3,
     position: {
-      desktop: { x: '22%', y: '65%' },
+      desktop: { x: '22%', y: '70%' },
       tablet: { x: '25%', y: '70%' },
       mobile: { x: '10%', y: '85%' },
     },
@@ -245,7 +245,7 @@ export function IntegrationsHero() {
             {/* Network Visualization - Simplified */}
             <motion.div
               variants={itemVariants}
-              className="relative mx-auto mt-6 aspect-[2/1] w-full max-w-3xl px-4 sm:px-6 lg:px-8"
+              className="relative mx-auto mt-4 md:mt-0 aspect-[2/1] w-full max-w-3xl px-4 sm:px-6 lg:px-8"
             >
               <div className="absolute inset-0 flex flex-col items-center justify-center">
                 <svg className="h-full w-full">
@@ -292,8 +292,8 @@ export function IntegrationsHero() {
                           }
                         }}
                         whileHover={{ scale: 1.1 }}
-                        className="relative h-16 w-16 rounded-xl bg-background p-2 
-                                border border-primary/10 sm:h-16 sm:w-16 sm:p-3 md:h-20 md:w-20 md:p-4"
+                        className="relative h-[4.5rem] w-[4.5rem] rounded-xl bg-background p-1 
+                                border border-primary/10 sm:h-[5.5rem] sm:w-[5.5rem] sm:p-2 md:h-[6rem] md:w-[6rem] md:p-2.5"
                       >
                         <div className="relative h-full w-full">
                           <Image
@@ -301,7 +301,7 @@ export function IntegrationsHero() {
                             alt="Integration logo"
                             fill
                             priority={index < 3}
-                            className="object-contain p-2 sm:p-2.5 md:p-3"
+                            className="object-contain p-1.5 sm:p-2 md:p-2.5"
                           />
                         </div>
                       </motion.div>
@@ -310,7 +310,7 @@ export function IntegrationsHero() {
                 })}
 
                 {/* Center Bot with simplified animation */}
-                <div className="absolute top-1/2 z-10 -translate-y-1/2">
+                <div className="absolute top-[62%] z-10 -translate-y-1/2">
                   <motion.div
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ 
@@ -329,9 +329,9 @@ export function IntegrationsHero() {
                         repeatType: 'loop'
                       }
                     }}
-                    className="relative flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 sm:h-20 sm:w-20 md:h-24 md:w-24"
+                    className="relative flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-full bg-primary/10 sm:h-[5.5rem] sm:w-[5.5rem] md:h-[6.5rem] md:w-[6.5rem]"
                   >
-                    <Bot className="h-8 w-8 text-primary sm:h-10 sm:w-10 md:h-12 md:w-12" />
+                    <Bot className="h-9 w-9 text-primary sm:h-11 sm:w-11 md:h-12 md:w-12" />
                   </motion.div>
                 </div>
               </div>
