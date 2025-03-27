@@ -4,12 +4,12 @@ import { LegalContent } from '@/components/sections/legal/legal-content';
 import { securityContent } from '@/content/legal';
 
 export const metadata: Metadata = {
-  title: 'Security',
-  description: 'Learn about how we protect your data with enterprise-grade security measures. Centrus AI employs robust protocols to safeguard your organisation\'s information and ensure confidentiality.',
-  keywords: 'data security, enterprise security, AI security measures, information protection, data encryption, secure AI platform, security protocols, data safeguarding',
+  title: 'Security Policy',
+  description: 'Learn how we protect your data with enterprise-grade security measures in our security policy.',
+  keywords: 'Centrus AI security policy',
   openGraph: {
-    title: 'Security Policy | Centrus AI',
-    description: 'Discover how Centrus AI implements comprehensive security measures to protect your organisation\'s data and maintain the highest standards of information security.',
+    title: 'Security Policy',
+    description: 'Learn how we protect your data with enterprise-grade security measures in our security policy.',
     type: 'website',
     url: 'https://centrus.ai/legal/security',
     siteName: 'Centrus AI',
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Our Security Commitment | Centrus AI',
-    description: 'How we protect your valuable data: Learn about our enterprise-grade security protocols, encryption standards, and data protection practices.',
+    title: 'Security Policy',
+    description: 'Learn how we protect your data with enterprise-grade security measures in our security policy.',
     images: ['/logo.png'],
     creator: '@centrusai',
   },

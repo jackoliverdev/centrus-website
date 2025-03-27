@@ -2,13 +2,13 @@ import { Metadata } from 'next';
 import { DocsIndex } from '@/components/sections/resources/docs-index';
 
 export const metadata: Metadata = {
-  title: 'Docs',
+  title: 'Getting started | Documentation',
   description:
-    'Explore comprehensive guides, tutorials, and technical documentation for Centrus AI products and services.',
-  keywords: 'technical documentation, implementation guides, user manuals, integration tutorials, product specifications.',
+    'From quick starts to detailed guides, find all the resources you need for getting started. Get guidance now.',
+  keywords: 'Centrus AI guides',
   openGraph: {
-    title: 'Centrus AI Documentation',
-    description: 'Comprehensive guides and technical documentation for Centrus AI.',
+    title: 'Getting started | Documentation',
+    description: 'From quick starts to detailed guides, find all the resources you need for getting started. Get guidance now.',
     type: 'website',
     url: 'https://centrus.ai/resources/docs',
     siteName: 'Centrus AI',
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Technical Documentation | Centrus AI Docs',
-    description: 'Access detailed technical documentation, implementation guides, and tutorials for Centrus AI.',
+    title: 'Centrus AI Documentation',
+    description: 'From quick starts to detailed guides, find all the resources you need for getting started. Get guidance now.',
     images: ['/logo.png'],
     creator: '@centrusai',
   },

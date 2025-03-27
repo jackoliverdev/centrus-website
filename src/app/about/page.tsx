@@ -5,12 +5,12 @@ import { AboutMission } from '@/components/sections/about/about-mission';
 import { AboutValues } from '@/components/sections/about/about-values';
 
 export const metadata: Metadata = {
-  title: 'About Us',
-  description: 'Learn about our mission to transform businesses with AI-powered intelligence and our vision for the future of organisational knowledge management.',
-  keywords: 'about Centrus AI, our mission, company vision, AI leadership, organisation values, team culture, enterprise AI innovation, company history',
+  title: 'Cutting-edge AI without barriers | About Us',
+  description: 'We offer AI solutions for businesses. Learn about us, our core values and what drives us to create cutting-edge AI without barriers.',
+  keywords: 'cutting-edge AI',
   openGraph: {
-    title: 'About Us | Centrus AI',
-    description: 'Discover our vision, mission, and the team behind Centrus AI. Learn how we\'re transforming business intelligence with cutting-edge AI solutions.',
+    title: 'Cutting-edge AI without barriers | About Us',
+    description: 'We offer AI solutions for businesses. Learn about us, our core values and what drives us to create cutting-edge AI without barriers.',
     type: 'website',
     url: 'https://centrus.ai/about',
     siteName: 'Centrus AI',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Centrus AI | Our Mission & Vision',
+    title: 'Cutting-edge AI without barriers',
     description: 'Meet the team behind Centrus AI and learn about our mission to revolutionise how organisations access and utilise their critical business knowledge.',
     images: ['/logo.png'],
     creator: '@centrusai',

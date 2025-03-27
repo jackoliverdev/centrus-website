@@ -4,12 +4,12 @@ import { CareersHero } from '@/components/sections/careers/careers-hero';
 import { JobOpenings } from '@/components/sections/careers/job-openings';
 
 export const metadata: Metadata = {
-  title: 'Careers',
-  description: 'Join our team and help shape the future of enterprise AI. Discover exciting opportunities to work with cutting-edge technology and transform organisational intelligence.',
-  keywords: 'AI careers, tech jobs, Centrus careers, enterprise AI jobs, technology opportunities, AI company jobs, remote tech positions, innovative workplace',
+  title: 'Join our team | Careers in AI',
+  description: 'Help us shape the future of enterprise AI. We\'re looking for talented individuals passionate about AI innovation and customer success.',
+  keywords: 'AI careers',
   openGraph: {
-    title: 'Careers | Centrus AI',
-    description: 'Join our innovative team and help shape the future of enterprise AI. Explore opportunities to work with cutting-edge technology in a collaborative environment.',
+    title: 'Join our team | Careers in AI',
+    description: 'Help us shape the future of enterprise AI. We\'re looking for talented individuals passionate about AI innovation and customer success.',
     type: 'website',
     url: 'https://centrus.ai/careers',
     siteName: 'Centrus AI',
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Join Our Team | Centrus AI Careers',
-    description: 'Be part of an exciting journey to revolutionise enterprise knowledge management. Discover job opportunities with our forward-thinking AI company.',
+    title: 'Centrus AI Careers',
+    description: 'Help us shape the future of enterprise AI. We\'re looking for talented individuals passionate about AI innovation and customer success.',
     images: ['/logo.png'],
     creator: '@centrusai',
   },

@@ -5,13 +5,13 @@ import { EnterpriseSection } from '@/components/sections/pricing/enterprise-sect
 import { PricingFaq } from '@/components/sections/pricing/pricing-faq';
 
 export const metadata: Metadata = {
-  title: 'Pricing',
+  title: 'Choose the Perfect Plan | Pricing',
   description:
-    'Flexible pricing plans for businesses of all sizes. From startups to enterprises, find the perfect plan for your organisation\'s needs.',
-  keywords: 'AI pricing, enterprise pricing, subscription plans, flexible billing, business plans, enterprise solution, AI subscription, scalable pricing',
+    'Save up to 25% with Centrus AI solutions annual package. Choose the perfect plan for your AI solution today.',
+  keywords: 'AI pricing',
   openGraph: {
-    title: 'Pricing | Centrus AI',
-    description: 'Flexible pricing plans for businesses of all sizes. From startups to enterprises, find the perfect plan for your organisation\'s needs.',
+    title: 'Choose the Perfect Plan | Pricing',
+    description: 'Save up to 25% with Centrus AI solutions annual package. Choose the perfect plan for your AI solution today.',
     type: 'website',
     url: 'https://centrus.ai/pricing',
     siteName: 'Centrus AI',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Enterprise AI Pricing Plans | Centrus AI',
+    title: 'Accessible Enterprise AI Pricing for Every Budget',
     description: 'Discover transparent, flexible pricing tailored to your business size. Centrus AI offers customised plans with predictable costs and no hidden fees.',
     images: ['/logo.png'],
     creator: '@centrusai',

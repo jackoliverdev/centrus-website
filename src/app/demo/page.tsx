@@ -6,13 +6,13 @@ import { DemoHero } from '@/components/sections/demo/demo-hero';
 import { DemoProcess } from '@/components/sections/demo/demo-process';
 
 export const metadata: Metadata = {
-  title: 'Book a Demo',
+  title: 'See Centrus AI in Action | Book a Demo',
   description:
-    'See Centrus AI in action. Book a personalised demo to discover how we can transform your business operations.',
-  keywords: 'AI demo, product demonstration, book a demo, enterprise AI demo, live tour, personalised walkthrough, software presentation, solution preview',
+    'Book a tailored demo experience and discover how Centrus AI can transform your team\'s knowledge management and productivity.',
+  keywords: 'AI demo',
   openGraph: {
-    title: 'Book a Demo | Centrus AI',
-    description: 'See Centrus AI in action with a personalised demonstration tailored to your organisation\'s specific needs and challenges.',
+    title: 'See Centrus AI in Action | Book a Demo',
+    description: 'Book a tailored demo experience and discover how Centrus AI can transform your team\'s knowledge management and productivity. See Centrus AI in action.',
     type: 'website',
     url: 'https://centrus.ai/demo',
     siteName: 'Centrus AI',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Book a Personalised AI Demo | Centrus AI',
+    title: 'See Your Business Knowledge Transformed',
     description: 'Schedule a guided demonstration of how Centrus AI can transform your organisation\'s knowledge management and workflow efficiency.',
     images: ['/logo.png'],
     creator: '@centrusai',

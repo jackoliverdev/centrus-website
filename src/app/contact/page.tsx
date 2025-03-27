@@ -5,12 +5,12 @@ import { ContactForm } from '@/components/sections/contact/contact-form';
 import { ContactHero } from '@/components/sections/contact/contact-hero';
 
 export const metadata: Metadata = {
-  title: 'Contact',
-  description: 'Get in touch with our team. We can help you transform your organisation with AI-powered intelligence and personalised solutions.',
-  keywords: 'contact Centrus AI, get in touch, support enquiries, sales contact, enterprise AI help, technical support, request information, business enquiry',
+  title: 'Get in Touch | Let\'s Explore AI Together',
+  description: 'Get in touch with AI experts for business-related AI guidance and demonstrations. Let\'s explore the possibilities together.',
+  keywords: 'AI advice',
   openGraph: {
-    title: 'Contact Us | Centrus AI',
-    description: 'Reach out to our expert team for information about how Centrus AI can transform your organisation\'s knowledge management capabilities.',
+    title: 'Get in Touch | Let\'s Explore AI Together',
+    description: 'Get in touch with AI experts for business-related AI guidance and demonstrations. Let\'s explore the possibilities together.',
     type: 'website',
     url: 'https://centrus.ai/contact',
     siteName: 'Centrus AI',
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Get in Touch | Centrus AI',
-    description: 'Connect with our team to discuss your organisation\'s needs and discover how our AI solutions can enhance your business intelligence.',
+    title: 'Get in Touch',
+    description: 'Get in touch with AI experts for business-related AI guidance and demonstrations. Let\'s explore the possibilities together.',
     images: ['/logo.png'],
     creator: '@centrusai',
   },

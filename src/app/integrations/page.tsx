@@ -8,13 +8,13 @@ import { IntegrationsFaq } from '@/components/sections/integrations/faq';
 
 
 export const metadata: Metadata = {
-  title: 'Integrations',
+  title: 'Connect Your Entire Workspace | AI Integrations',
   description:
-    'Connect Centrus AI with your favourite tools. Seamless integration with Google Drive, Microsoft Teams, Slack, and more.',
-  keywords: 'AI integrations, enterprise integrations, Slack integration, Microsoft Teams, Google Drive, API integration, workflow automation, data synchronisation',
+    'Connect your business tools with Centrus AI, including Microsoft Teams, Google Drive and WhatsApp. Discover our integrations.',
+  keywords: 'AI platform integrations',
   openGraph: {
-    title: 'Integrations | Centrus AI',
-    description: 'Connect Centrus AI with your favourite tools. Seamless integration with Google Drive, Microsoft Teams, Slack, and more.',
+    title: 'Connect Your Entire Workspace | AI Integrations',
+    description: 'Connect your business tools with Centrus AI, including Microsoft Teams, Google Drive and WhatsApp. Discover our integrations.',
     type: 'website',
     url: 'https://centrus.ai/integrations',
     siteName: 'Centrus AI',
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Enterprise AI Integrations | Centrus AI',
-    description: 'Seamlessly connect Centrus AI with your existing business tools. Enhance your workflow with intelligent integrations for all your favourite platforms.',
+    title: 'AI Business Integrations',
+    description: 'Connect your business tools with Centrus AI, including Microsoft Teams, Google Drive and WhatsApp. Discover our integrations.',
     images: ['/logo.png'],
     creator: '@centrusai',
   },

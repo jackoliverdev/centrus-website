@@ -2,13 +2,13 @@ import { Metadata } from 'next';
 import { PromptLibraryIndex } from '@/components/sections/resources/prompt-library-index';
 
 export const metadata: Metadata = {
-  title: 'Prompt Library',
+  title: 'AI Prompt Library',
   description:
-    'Browse our collection of effective AI prompts designed for various business roles and use cases.',
-  keywords: 'AI prompts, prompt engineering, prompt library, business prompts, role-specific prompts, optimised prompts, productivity templates, AI workflows',
+    'Find business-related AI prompts with role-specific examples and best practices. Browse our AI prompt library.',
+  keywords: 'business AI prompts',
   openGraph: {
-    title: 'Centrus AI Prompt Library',
-    description: 'Discover proven AI prompts for your business needs and workflow optimisation.',
+    title: 'AI Prompt Library',
+    description: 'Find business-related AI prompts with role-specific examples and best practices. Browse our AI prompt library.',
     type: 'website',
     url: 'https://centrus.ai/resources/prompt-library',
     siteName: 'Centrus AI',
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Prompt Library | Centrus AI',
-    description: 'Access our curated collection of specialised prompts designed for business roles, workflows, and productivity enhancement.',
+    title: 'AI Prompt Library',
+    description: 'Find business-related AI prompts with role-specific examples and best practices. Browse our AI prompt library.',
     images: ['/logo.png'],
     creator: '@centrusai',
   },

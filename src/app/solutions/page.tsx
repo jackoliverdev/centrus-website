@@ -7,13 +7,13 @@ import { CaseStudiesSection } from '@/components/sections/solutions/NotUsed-case
 import { DemoSection } from '@/components/sections/solutions/demo-section';
 
 export const metadata: Metadata = {
-  title: 'Solutions',
+  title: 'Transform Your Business | AI-Powered Solutions',
   description:
-    'Explore Centrus AI solutions for your business. From document management to customer support, we have the right tools to help you succeed.',
-  keywords: 'AI solutions, enterprise AI, document management, customer support, knowledge management',
+    'From document search to sales enablement, get time back for your business with AI. Discover Centrus AI solutions.',
+  keywords: 'AI solutions',
   openGraph: {
-    title: 'Solutions | Centrus AI',
-    description: 'Transform your business workflows with Centrus AI solutions. Powerful tools for document management, customer support, and knowledge base automation.',
+    title: 'Transform Your Business | AI-Powered Solutions',
+    description: 'From document search to sales enablement, get time back for your business with AI. Discover Centrus AI solutions.',
     type: 'website',
     url: 'https://centrus.ai/solutions',
     siteName: 'Centrus AI',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Enterprise AI Solutions | Centrus AI',
+    title: 'Transform Your Business | AI-Powered Solutions',
     description: 'Transform your business workflows with Centrus AI solutions. Powerful tools for document management, customer support, and knowledge base automation.',
     images: ['/logo.png'],
     creator: '@centrusai',

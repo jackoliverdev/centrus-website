@@ -3,13 +3,13 @@ import { BlogIndex } from '@/components/sections/resources/blog-index';
 import { blogPosts, blogCategories } from '@/content/blog';
 
 export const metadata: Metadata = {
-  title: 'Blog',
+  title: 'Our latest thinking | Blog',
   description:
-    'Explore the latest insights, updates, and thought leadership in AI technology and business transformation for organisations.',
-  keywords: 'AI blog, business AI, enterprise technology, AI insights, digital transformation, business innovation, AI case studies, industry trends',
+    'Get business-related AI insights and advice in our regular blog uploads. See our recent uploads now.',
+  keywords: 'AI blog',
   openGraph: {
-    title: 'Centrus AI Blog',
-    description: 'Latest insights and updates on AI technology and business transformation for organisations.',
+    title: 'Our latest thinking | Blog',
+    description: 'Get business-related AI insights and advice in our regular blog uploads. See our recent uploads now.',
     type: 'website',
     url: 'https://centrus.ai/resources/blog',
     siteName: 'Centrus AI',
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Centrus AI Blog | Industry Insights & Trends',
-    description: 'Discover the latest thinking, research and practical advice on implementing AI in your organisation.',
+    title: 'AI Industry Insights & Trends',
+    description: 'Get business-related AI insights and advice in our regular blog uploads. See our recent uploads now..',
     images: ['/logo.png'],
     creator: '@centrusai',
   },

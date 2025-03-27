@@ -3,13 +3,13 @@ import { AffiliatesForm } from '@/components/sections/affiliates/form';
 import { AffiliatesHero } from '@/components/sections/affiliates/hero';
 
 export const metadata: Metadata = {
-  title: 'Affiliates',
+  title: 'Join our affiliate program | AI Affiliates',
   description:
-    'Join the Centrus AI Affiliates Programme and earn rewards by referring businesses to our AI solutions.',
-  keywords: 'Centrus AI affiliates, referral programme, AI partnerships, affiliate marketing, tech referrals, enterprise AI affiliates, earn commissions, partner programme',
+    'Partner with Centrus AI and earn competitive commissions while helping businesses transform their operations with cutting-edge AI solutions.',
+  keywords: 'AI affiliates',
   openGraph: {
-    title: 'Centrus AI Affiliates Programme',
-    description: 'Partner with us and earn rewards by referring organisations to our innovative AI solutions for enhanced business intelligence.',
+    title: 'Join our affiliate program | AI Affiliates',
+    description: 'Partner with Centrus AI and earn competitive commissions while helping businesses transform their operations with cutting-edge AI solutions.',
     type: 'website',
     url: 'https://centrus.ai/affiliates',
     siteName: 'Centrus AI',
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Join Our Affiliates Programme | Centrus AI',
-    description: 'Become a Centrus AI affiliate partner and earn rewards by connecting businesses with our cutting-edge enterprise AI solutions.',
+    title: 'Join Our Affiliates Programme',
+    description: 'Partner with Centrus AI and earn competitive commissions while helping businesses transform their operations with cutting-edge AI solutions.',
     images: ['/logo.png'],
     creator: '@centrusai',
   },

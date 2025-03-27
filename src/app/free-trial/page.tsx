@@ -6,13 +6,13 @@ import { TrialRedirect } from '@/components/sections/trial/trial-redirect';
 import { TrialHero } from '@/components/sections/trial/trial-hero';
 
 export const metadata: Metadata = {
-  title: 'Free Trial',
+  title: 'Start Your Journey with Centrus AI | Free Trial',
   description:
-    'Start your free trial of Centrus AI. No credit card required. Experience the power of AI-driven knowledge management for your organisation.',
-  keywords: 'free AI trial, no credit card, enterprise AI demo, trial period, test drive, AI software trial, knowledge management trial, product evaluation',
+    'Experience the full power of Centrus AI with a free trial. Get free immediate access to core features today.',
+  keywords: 'AI free trial',
   openGraph: {
-    title: 'Free Trial | Centrus AI',
-    description: 'Start your free trial of Centrus AI with no credit card required. Experience how our AI solution can optimise your organisation\'s knowledge management.',
+    title: 'Start Your Journey with Centrus AI | Free Trial',
+    description: 'Experience the full power of Centrus AI with a free trial. Get free immediate access to core features today.',
     type: 'website',
     url: 'https://centrus.ai/free-trial',
     siteName: 'Centrus AI',
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Start Your Free AI Trial | Centrus AI',
-    description: 'Try Centrus AI free with no obligation or credit card. See how our solution can transform your business\'s information accessibility and workflow.',
+    title: 'Try Enterprise AI Risk-Free',
+    description: 'Experience the full power of Centrus AI with a free trial. Get free immediate access to core features today.',
     images: ['/logo.png'],
     creator: '@centrusai',
   },

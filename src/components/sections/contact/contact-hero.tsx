@@ -166,7 +166,7 @@ export function ContactHero() {
 
       {/* Floating Icons */}
       <FloatingIcon Icon={MessageSquare} delay={0.5} x="20%" y="30%" />
-      <FloatingIcon Icon={Bot} delay={0.7} x="75%" y="40%" />
+      <FloatingIcon Icon={Bot} delay={0.7} x="75%" y="30%" />
     </section>
   );
 }

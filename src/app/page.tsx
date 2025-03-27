@@ -10,13 +10,13 @@ import { FaqSection } from '@/components/sections/home/faq';
 import { CtaSection } from '@/components/sections/home/cta';
 
 export const metadata: Metadata = {
-  title: 'Centrus AI | Transform Your Business Knowledge',
+  title: 'Your AI-powered business assistant | Centrus AI',
   description:
-    'Harness the power of AI to transform how your company accesses and utilises information. Instant data retrieval, smart analysis, and automated content creation.',
-  keywords: 'AI assistant, enterprise AI, business intelligence, knowledge management, data retrieval, information access, AI transformation, business productivity',
+    'Reduce time spent searching by 40% with your AI-powered business assistant. From business-data retrieval to content creation. Discover Centrus AI.',
+  keywords: 'AI business solution',
   openGraph: {
-    title: 'Centrus AI | Transform Your Business Knowledge',
-    description: 'Harness the power of AI to transform how your company accesses and utilises information. Instant data retrieval, smart analysis, and automated content creation.',
+    title: 'Your AI-powered business assistant | Centrus AI',
+    description: 'Reduce time-wasting spent searching by 40% with your AI-powered business assistant. From business-data retrieval to content creation. Discover Centrus AI.',
     type: 'website',
     url: 'https://centrus.ai',
     siteName: 'Centrus AI',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Centrus AI | Enterprise AI Knowledge Assistant',
+    title: 'Unlock Your Business Knowledge',
     description: 'Transform how your business accesses critical information with AI-powered knowledge retrieval, analysis, and content generation.',
     images: ['/logo.png'],
     creator: '@centrusai',

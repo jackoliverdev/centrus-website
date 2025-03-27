@@ -4,13 +4,13 @@ import { ResourcesGrid } from '@/components/sections/resources/grid';
 import { ResourcesHero } from '@/components/sections/resources/hero';
 
 export const metadata: Metadata = {
-  title: 'Resources',
+  title: 'AI Knowledge Resources',
   description:
-    'Explore our collection of guides, documentation, case studies, and insights about AI in business and organisations.',
-  keywords: 'AI resources, enterprise guides, business case studies, technical documentation, AI tutorials, knowledge base, implementation guides, best practices',
+    'Comprehensive collection of AI implementation guides, best practices, and business case studies tailored for UK organisations',
+  keywords: 'AI resource library',
   openGraph: {
-    title: 'Resources | Centrus AI',
-    description: 'Explore our collection of guides, documentation, case studies, and insights about AI in business and organisations.',
+    title: 'AI Knowledge Resources',
+    description: 'Comprehensive collection of AI implementation guides, best practices, and business case studies tailored for UK organisations',
     type: 'website',
     url: 'https://centrus.ai/resources',
     siteName: 'Centrus AI',
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Knowledge Resources | Centrus AI',
-    description: 'Access comprehensive guides, technical documentation, and real-world case studies to optimise your AI implementation and utilisation.',
+    title: 'AI Knowledge Resources',
+    description: 'Comprehensive collection of AI implementation guides, best practices, and business case studies tailored for UK organisations.',
     images: ['/logo.png'],
     creator: '@centrusai',
   },
