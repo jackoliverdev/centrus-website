@@ -190,14 +190,14 @@ export function HeroSection() {
     offset: ['start start', 'end start'],
   });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
-  const y = useTransform(scrollYProgress, [0, 0.5], [0, 100]);
+  const opacity = useTransform(scrollYProgress, [0, 0.9], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.9], [1, 0.7]);
+  const y = useTransform(scrollYProgress, [0, 0.9], [0, 100]);
 
   return (
     <section
       ref={containerRef}
-      className="relative flex min-h-[90vh] items-center overflow-hidden pb-16 pt-20 md:pb-32"
+      className="relative flex min-h-[90vh] items-center overflow-hidden pb-16 pt-20 md:pb-32 lg:pt-32 lg:pb-20"
     >
       <SimpleBackground />
 
