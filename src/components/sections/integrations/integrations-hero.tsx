@@ -107,9 +107,9 @@ export function IntegrationsHero() {
     offset: ['start start', 'end start'],
   });
 
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
-  const y = useTransform(scrollYProgress, [0, 1], [0, 100]);
+  const opacity = useTransform(scrollYProgress, [0, 0.4, 1], [1, 1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.4, 1], [1, 1, 0.8]);
+  const y = useTransform(scrollYProgress, [0, 0.4, 1], [0, 0, 100]);
 
   React.useEffect(() => {
     const handleResize = () => {
