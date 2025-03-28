@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, HTMLMotionProps } from 'framer-motion';
-import { ArrowRight, Sparkles, Puzzle } from 'lucide-react';
+import { ArrowRight, Network, Puzzle } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
@@ -290,7 +290,7 @@ export function IntegrationsSection() {
           className={cn("relative mb-16 text-center", dmSans.className)}
         >
           <div className={cn("mb-4 inline-flex items-center rounded-full bg-primary/10 px-4 py-1 text-sm ring-1 ring-primary/20 backdrop-blur-sm", dmSans.className)}>
-            <Sparkles className="mr-2 h-4 w-4 text-primary" />
+            <Network className="mr-2 h-4 w-4 text-primary" />
             <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
               Seamless Integrations
             </span>

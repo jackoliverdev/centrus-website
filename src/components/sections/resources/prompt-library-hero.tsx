@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Sparkles, Book, Brain, Rocket } from 'lucide-react';
+import { Wand2, Book, Brain, Rocket } from 'lucide-react';
 import React from 'react';
 
 import { Container } from '@/components/ui/container';
@@ -110,7 +110,7 @@ export function PromptLibraryHero() {
           >
             <div className="relative">
               <div className="relative rounded-full border border-primary/20 bg-primary/10 p-4">
-                <Sparkles className="h-8 w-8 text-primary" />
+                <Wand2 className="h-8 w-8 text-primary" />
               </div>
             </div>
           </motion.div>

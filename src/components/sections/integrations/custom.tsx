@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, Mail } from 'lucide-react';
+import { ArrowRight, Blocks, Mail, PenTool } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
 
@@ -34,7 +34,7 @@ export function CustomIntegrations() {
               transition={{ duration: 0.5 }}
               className="mb-8 inline-flex items-center rounded-full bg-[#2b9ce5]/10 px-4 py-1 text-sm ring-1 ring-[#2b9ce5]/20 backdrop-blur-sm"
             >
-              <Sparkles className="mr-2 h-4 w-4 text-[#2b9ce5]" />
+              <Blocks className="mr-2 h-4 w-4 text-[#2b9ce5]" />
               <span className="bg-gradient-to-r from-[#2b9ce5] to-[#2b9ce5]/80 bg-clip-text text-transparent">
                 Custom Solutions
               </span>

@@ -5,14 +5,14 @@ import { EbookFeatures } from '@/components/sections/ebook/ebook-features';
 import { EbookForm } from '@/components/sections/ebook/ebook-form';
 
 export const metadata: Metadata = {
-  title: "AI: 10 Routes to Business Success",
-  description: "Download our free guide for managers looking to transform their business with AI. 10 proven strategies for successful AI implementation.",
-  keywords: "AI business guide,",
+  title: "AI: 10 Routes to Success | Free eBook",
+  description: "This well-researched and concise guide explores 10 impactful ways to use AI for business.",
+  keywords: "AI for business",
   openGraph: {
-    title: "AI: 10 Routes to Business Success",
-    description: "Download our free guide for managers looking to transform their business with AI. 10 proven strategies for successful AI implementation.",
+    title: "AI: 10 Routes to Success | Free eBook",
+    description: "This well-researched and concise guide explores 10 impactful ways to use AI for business.",
     type: "website",
-    url: "https://centrus.ai/ebook-guide",
+    url: "https://centrus.ai/resources/10_routes_business_success",
     siteName: "Centrus AI",
     images: [
       {
@@ -25,13 +25,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI: 10 Routes to Business Success",
-    description: "Download our free guide for managers looking to transform their business with AI. 10 proven strategies for successful AI implementation.",
+    title: "AI: 10 Routes to Success | Free eBook",
+    description: "This well-researched and concise guide explores 10 impactful ways to use AI for business.",
     images: ["/logo.png"],
     creator: "@centrusai",
   },
   alternates: {
-    canonical: "https://centrus.ai/ebook-guide",
+    canonical: "https://centrus.ai/resources/10_routes_business_success",
   },
 };
 

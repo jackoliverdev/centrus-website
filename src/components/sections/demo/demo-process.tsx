@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Sparkles, MessagesSquare, Laptop, FileSearch, CheckCircle2 } from 'lucide-react';
+import { Route, MessagesSquare, Laptop, FileSearch, CheckCircle2 } from 'lucide-react';
 
 const steps = [
   {
@@ -53,7 +53,7 @@ export function DemoProcess() {
           transition={{ duration: 0.5 }}
           className="inline-flex items-center rounded-full bg-primary/10 px-4 py-1 text-sm ring-1 ring-primary/20 backdrop-blur-sm"
         >
-          <Sparkles className="mr-2 h-4 w-4 text-primary" />
+          <Route className="mr-2 h-4 w-4 text-primary" />
           <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
             What to Expect
           </span>

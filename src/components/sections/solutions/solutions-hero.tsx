@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Brain, NetworkIcon, Rocket, Mail } from 'lucide-react';
+import { Brain, NetworkIcon, Rocket, Mail, Zap } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
 import { DM_Sans } from 'next/font/google';
@@ -94,7 +94,7 @@ export function SolutionsHero() {
               variants={itemVariants}
               className="mb-6 inline-flex items-center rounded-full bg-primary/10 px-4 py-1 text-sm ring-1 ring-primary/20 backdrop-blur-sm"
             >
-              <NetworkIcon className="mr-2 h-4 w-4 text-primary" />
+              <Zap className="mr-2 h-4 w-4 text-primary" />
               <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                 Transformative AI Solutions
               </span>

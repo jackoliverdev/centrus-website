@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, Users, Puzzle, Crown, Mail } from 'lucide-react';
+import { ArrowRight, WrenchIcon, Users, Puzzle, Crown, Mail } from 'lucide-react';
 import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
@@ -41,7 +41,7 @@ export function EnterpriseSection() {
             viewport={{ once: true }}
             className="mb-3 inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm ring-1 ring-primary/20 backdrop-blur-sm"
           >
-            <Sparkles className="mr-2 h-4 w-4 text-primary" />
+            <WrenchIcon className="mr-2 h-4 w-4 text-primary" />
             <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
               Enterprise Solutions
             </span>

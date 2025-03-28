@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, Puzzle, LucideIcon } from 'lucide-react';
+import { ArrowRight, Network, Puzzle, LucideIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -288,7 +288,7 @@ export function IntegrationsGrid() {
           className="relative mb-16 text-center"
         >
           <div className="mb-4 inline-flex items-center rounded-full bg-primary/10 px-4 py-1 text-sm ring-1 ring-primary/20 backdrop-blur-sm">
-            <Sparkles className="mr-2 h-4 w-4 text-primary" />
+            <Network className="mr-2 h-4 w-4 text-primary" />
             <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
               Enterprise Integration Suite
             </span>

@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { motion, AnimatePresence, useMotionValue, useInView } from 'framer-motion';
-import { Sparkles, RefreshCw } from 'lucide-react';
+import { Sparkles, RefreshCw, Play, MonitorPlay } from 'lucide-react';
 import { DM_Sans } from 'next/font/google';
 
 import { Container } from '@/components/ui/container';
@@ -244,7 +244,7 @@ export function InteractiveDemo() {
             className="mb-6 text-center md:mb-12"
           >
             <div className="mb-3 inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs md:mb-4 md:px-4 md:text-sm">
-              <Sparkles className="mr-1.5 h-3 w-3 text-primary md:mr-2 md:h-4 md:w-4" />
+              <Play className="mr-1.5 h-3 w-3 text-primary md:mr-2 md:h-4 md:w-4" />
               <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                 Interactive Demo
               </span>

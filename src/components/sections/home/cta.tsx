@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useInView, HTMLMotionProps } from 'framer-motion';
-import { ArrowRight, Calendar, Sparkles, RocketIcon } from 'lucide-react';
+import { ArrowRight, Calendar, Zap, RocketIcon } from 'lucide-react';
 import Link from 'next/link';
 import { useRef } from 'react';
 import { DM_Sans } from 'next/font/google';
@@ -78,7 +78,7 @@ export function CtaSection() {
               transition={{ duration: 0.5 }}
               className={cn("mb-8 inline-flex items-center rounded-full bg-primary/10 px-4 py-1 text-sm ring-1 ring-primary/20 backdrop-blur-sm", dmSans.className)}
             >
-              <Sparkles className="mr-2 h-4 w-4 text-primary" />
+              <Zap className="mr-2 h-4 w-4 text-primary" />
               <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                 Transform Your Business with AI
               </span>

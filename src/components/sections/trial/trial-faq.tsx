@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, HTMLMotionProps } from 'framer-motion';
-import { Sparkles, ChevronDown, ArrowRight } from 'lucide-react';
+import { HelpCircle, ChevronDown, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import * as React from 'react';
 
@@ -57,9 +57,9 @@ export function TrialFaq() {
           className="mx-auto mb-8 sm:mb-16 text-center"
         >
           <div className="mb-3 sm:mb-4 inline-flex items-center rounded-full bg-primary/10 px-3 sm:px-4 py-1 text-sm ring-1 ring-primary/20 backdrop-blur-sm">
-            <Sparkles className="mr-2 h-4 w-4 text-primary" />
+            <HelpCircle className="mr-2 h-4 w-4 text-primary" />
             <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
-              Free Plan FAQ
+              Common Questions
             </span>
           </div>
 

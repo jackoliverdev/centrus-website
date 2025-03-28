@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Brain, Zap, Lock, Users, Clock, Check, Sparkles } from 'lucide-react';
+import { Brain, Zap, Lock, Users, Clock, Check, Sparkles, CheckCircle } from 'lucide-react';
 import React from 'react';
 
 import { cn } from '@/lib/utils';
@@ -104,7 +104,7 @@ export function TrialFeatures() {
           className="mb-16 space-y-4 text-center"
         >
           <div className="mb-4 inline-flex items-center rounded-full bg-primary/10 px-4 py-1 text-sm ring-1 ring-primary/20 backdrop-blur-sm">
-            <Sparkles className="mr-2 h-4 w-4 text-primary" />
+            <CheckCircle className="mr-2 h-4 w-4 text-primary" />
             <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
               Fully-Featured Trial
             </span>

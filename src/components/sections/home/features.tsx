@@ -8,7 +8,7 @@ import {
   // useMotionTemplate,
   HTMLMotionProps,
 } from 'framer-motion';
-import { DollarSign, Users, Brain, Zap, Sparkles, ArrowRight, ArrowUpRight } from 'lucide-react';
+import { DollarSign, Users, Brain, Zap, LineChart, ArrowRight, ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 import * as React from 'react';
 import { DM_Sans } from 'next/font/google';
@@ -297,7 +297,7 @@ export function FeaturesSection() {
             className={cn("relative mb-16 text-center", dmSans.className)}
           >
             <div className={cn("mb-4 inline-flex items-center rounded-full bg-primary/10 px-4 py-1 text-sm ring-1 ring-primary/20 backdrop-blur-sm", dmSans.className)}>
-              <Sparkles className="mr-2 h-4 w-4 text-primary" />
+              <LineChart className="mr-2 h-4 w-4 text-primary" />
               <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                 Real Business Impact
               </span>
@@ -320,7 +320,7 @@ export function FeaturesSection() {
         ) : (
           <div className={cn("relative mb-16 text-center", dmSans.className)}>
             <div className={cn("mb-4 inline-flex items-center rounded-full bg-primary/10 px-4 py-1 text-sm ring-1 ring-primary/20 backdrop-blur-sm", dmSans.className)}>
-              <Sparkles className="mr-2 h-4 w-4 text-primary" />
+              <LineChart className="mr-2 h-4 w-4 text-primary" />
               <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                 Real Business Impact
               </span>
